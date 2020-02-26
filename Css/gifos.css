@@ -1,0 +1,183 @@
+body{
+   margin: 0;
+   padding: 0;
+}
+ 
+.title{
+   grid-area: title;
+   font-family: ChakraPetch-Regular;
+   font-size: 15px;
+   height: 23px;
+   width: 1438px;
+   background-image: linear-gradient(to right, #4180F6, #F7C9F3);
+   color: #FFFFFF;
+   letter-spacing: 0;
+}
+.header{
+   grid-area: header;
+   display: flex;
+   justify-content: space-between;
+}
+/* botones y icono de gifos en heather */
+.buttonsHeader{
+   font-family: ChakraPetch-Regular;
+   color: #110038;
+   letter-spacing: 0;
+   text-align: center;
+   line-height: 18px;
+   background: #F7C9F3;
+   border: 1px solid #110038;
+   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+   font-size: 16px;
+   height: 36px;
+   width: 131px;
+ }
+.search{
+   grid-area: search;
+   background-color: #E6E6E6;
+   width: 1200px;
+   height: 99px; 
+}
+.buscar{
+   display: flex;
+   align-items: center;
+   font-family: ChakraPetch-Bold;
+   font-size: 14px;
+   color: #FFFFFF;
+   letter-spacing: 0;   
+   height: 23px;
+   background-image: linear-gradient(to right, #4180F6, #F7C9F3);
+}
+.searchChil{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 74px;
+}
+.searchChil input{
+   font-family: ChakraPetch-Regular;
+   font-size: 16px;
+   color: #B4B4B4;
+   letter-spacing: 0;
+   line-height: 22px;
+
+   width: 1057px;
+   height: 48px;
+   background-color: #E6E6E6;
+   background: #FFFFFF;
+   border: 1px solid #979797;
+   box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+.searchChil button{
+   font-family: ChakraPetch-Regular;
+   font-size: 16px;
+   color: #B4B4B4;
+   letter-spacing: 0;
+   line-height: 18px;
+
+   width: 102px;
+   height: 36px;
+   margin: 0 0 0 10px;
+   background: #E6E6E6;
+   border: 1px solid #808080;
+   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+   
+}
+.content_sugerencias{
+   grid-area:content;
+   align-self: center;
+   display: grid;
+}
+/* barra Hoy te sugerimos  */
+.sugerencias{
+   font-family: ChakraPetch-Regular;
+   font-size: 14px;
+   color: #110038;
+   letter-spacing: 0;
+
+   display: flex;
+   align-items: center;
+   height: 32px;
+   width:1200;
+   background:#FFFAFE;
+   border: solid 1px #E6BBE2;
+   box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80887D;
+   
+   padding:0 0 0 5px;
+   margin: 30px 0 30px 0;
+}
+/* contenedor de las sugerencias  */
+.boxgifossug{
+   display: flex;
+   justify-content: space-between;
+
+}
+
+/* hoy te sugerimos  */
+.container{
+   box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+.boxheader{
+   display: grid;
+   justify-content: end;
+   align-items: center;
+   width:280px;
+   height:24px;
+   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%); 
+}
+.boxheader img{
+   margin: 0 8px 0 0;
+}
+.box{
+   display:grid;
+   width: 280px;
+   height: 280px;
+   /* box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #ffffff; */
+   background:#E6E6E6;   
+}
+
+.buttonVerMas{
+   font-family: ChakraPetch-Regular;
+   font-size: 14px;
+   color: #FFFFFF;
+   letter-spacing: 0;
+   text-align: center;
+   line-height: 18px;
+
+   width:81px;
+   height:34px;
+   margin:18px;
+   justify-self:start;
+   align-self: end;
+   background:#4180f6;
+   border: 1px solid #4C2F99;
+   box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+}
+.content_sugerencias{
+   grid-area:content_sugerencias;
+}
+
+.content{
+   grid-area: content;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: repeat(3, 1fr);
+   grid-gap: 10px;
+}
+
+
+
+
+@media screen and (min-width: 736px){ 
+   .grid{
+      display: grid;
+      grid-template-columns: 122px 597px 597px 122px;
+      grid-template-rows:70px 85px 70px 610px 280px;
+      grid-template-areas:
+          "title title title title"
+          ". header header ."
+          ". search search ."
+          ". content_sugerencias content_sugerencias ."
+          ". content content .";
+   }
+}
