@@ -16,15 +16,17 @@
             <div class="imggifoslog">
                 <img src="Images/gifOF_logo.png" alt="Icono de Gifos en azul">
             </div>
-            <div class="buttons">
+            <div class="buttonDropD">
                 <button onclick="crearGifos()" class="buttonsHeader">Crear Gifos</button>
-                <button onclick="elegirTema()" class="buttonsHeader">Elegir Tema <img src="./Images/dropdown.svg" alt="">
+				<div class="dropdown">
+                	<button onclick="elegirTema()" class="buttonsHeader">Elegir Tema <img src="./Images/dropdown.svg" alt="">
                     </button>
-                    <!-- <div class="drpbut">
-                        <a href="">H</a>
-                        <a href="">l</a>
-                    </div> -->
+                    	<div class= "dropdownContent" id="dropD">							
+							<button onclick="light()">Sailor light</button>
+							<button onclick="dark()">Sailor night</button>
+                    	</div>
                 <a href="">Mis Guifos</a>
+				</div>					
             </div>         
         </div>
         <div class="search">

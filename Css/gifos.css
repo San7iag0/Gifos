@@ -172,7 +172,7 @@ body{
    .grid{
       display: grid;
       grid-template-columns: 122px 597px 597px 122px;
-      grid-template-rows:70px 85px 70px 610px 280px;
+      grid-template-rows:70px 145px 70px 610px 280px;
       grid-template-areas:
           "title title title title"
           ". header header ."
@@ -181,3 +181,19 @@ body{
           ". content content .";
    }
 }
+
+.dropdown {
+   position: relative;
+   display: inline-block;
+ }
+ .dropdownContent{
+   display: none;
+   position: absolute;
+   background-color: #f1f1f1;
+   width: 100%;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+ }
+ .show{
+    display:block;
+ }
