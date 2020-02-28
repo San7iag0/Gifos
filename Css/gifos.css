@@ -181,7 +181,10 @@ body{
           ". content content .";
    }
 }
-
+.buttonDropD{
+	display: flex;
+    width: 345px;
+}
 .dropdown {
    position: relative;
    display: inline-block;
