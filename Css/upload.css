@@ -1,0 +1,77 @@
+.grid{
+    display: grid;
+    grid-template-columns: 122px 597px 597px 122px;
+    grid-template-rows:70px 145px 70px 610px 280px;
+    grid-template-areas:
+        "title title title title"
+        ". header header ."
+        ". content content ."
+        ". content content .";
+}
+
+body{
+	margin:0;
+	padding:0;
+}
+
+.title{
+   grid-area: title;
+   height: 23px;
+   width: 1438px;
+   background-image: linear-gradient(to right, #4180F6, #F7C9F3);
+   color: white;
+}
+.header{
+	grid-area: header;
+}
+.content{
+	grid-area: content;
+	display:grid;
+    height: 386px;
+    width: 684px;
+    background: #E6E6E6;
+}
+.boxheader{
+   display: grid;
+   height: 24px;
+   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%); 
+}
+.container{
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+ }
+
+.cancelarGifo{
+	line-height: 32px;
+	background:#FFF4FD;
+/* 	border: 1px solid #110038; */
+	box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 2px0 0 #FFFFFF;
+}
+.comenzarGifo{
+	line-height: 32px;
+	background: #F7C9F3;
+	/* 	border: 1px solid #110038; */
+	box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF
+
+}
+.contentText{
+	font-family: ChakraPetch-Regular;
+	font-size:14px;
+	color:#110038;
+    letter-spacing:0;
+	line-height:20px;
+}
+.contentText h2{
+	font-family: chakraPetch-bold;
+	font-size:16px;
+	color:#110038;
+	letter-spacing:0;
+	line-height:22px;
+}
+.contentButtons{
+	width:100%;
+	margin:10px;
+}
+
+
+
+

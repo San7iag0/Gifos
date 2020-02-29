@@ -166,8 +166,6 @@ body{
 }
 
 
-
-
 @media screen and (min-width: 736px){ 
    .grid{
       display: grid;
@@ -180,6 +178,7 @@ body{
           ". content_sugerencias content_sugerencias ."
           ". content content .";
    }
+      
 }
 .buttonDropD{
 	display: flex;
