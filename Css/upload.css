@@ -5,11 +5,12 @@ body{
 .grid{
     display: grid;
     grid-template-columns: 119px 1200px 119px;
-    grid-template-rows:70px 150px 70px 610px 280px;
+    grid-template-rows: 60px 130px 540px 110px 280px;
     grid-template-areas:
         "title title title"
         ". header ."
         ". content ."
+        ". misGifos ."
         ;
 }
 
@@ -124,10 +125,35 @@ body{
     letter-spacing: 0;
     text-align: center;
 }
+.misGifos{
+    grid-area: misGifos;
+    display: grid;
+        
+}
 
-
-
-
-
-
-
+.sugerencias{
+    font-family: ChakraPetch-Regular;
+    font-size: 14px;
+    color: #110038;
+    letter-spacing: 0;
+ 
+    display: flex;
+    align-items: center;
+    height: 32px;
+    width:1200;
+    background:#FFFAFE;
+    border: solid 1px #E6BBE2;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80887D;
+}
+.misGifosBox{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 32px 1fr;
+}
+.box{
+    display:grid;
+    width: 280px;
+    height: 280px;
+    /* box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #ffffff; */
+    background:#E6E6E6;   
+ }
