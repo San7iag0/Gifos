@@ -261,3 +261,9 @@ body{
     outline-offset: -4px;
     box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 }
+
+/* +++++++++++++++++++++++ */
+
+#logoImgDark{
+   display: none;
+}
