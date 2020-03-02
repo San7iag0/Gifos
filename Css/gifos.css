@@ -32,6 +32,7 @@ body{
    font-size: 16px;
    height: 36px;
    width: 131px;
+   margin: 10px 0 0 10px;
  }
 .search{
    grid-area: search;
@@ -183,7 +184,7 @@ body{
 }
 .buttonDropD{
 	display: flex;
-    width: 345px;
+    width: 420px;
 }
 .dropdown {
    position: relative;
@@ -229,4 +230,34 @@ body{
    background: #F0F0F0;
    border: 1px solid #808080;
    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.arrow {
+  position: relative;
+  height: 1px;
+}
+
+.arrow::before {
+  content: url(./../images/dropdown.svg);
+  position: absolute;
+  top: -35.5px;
+  right: -37px;
+  width: 36px;
+  height: 33px;
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  text-align: center;
+  font-size: 28px;
+  line-height: 25px;
+  color: black;
+}
+
+/* ++++++++++++++++++ */
+
+.buttonsHeader:hover{
+	background-color: rgba(0, 0, 0, 0.2);
+    outline: 1px dashed #110038;
+    outline-offset: -4px;
+    box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 }
