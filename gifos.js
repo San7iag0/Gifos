@@ -10,13 +10,17 @@ function light() {
 }
 function dark(){
 	document.body.style.backgroundColor = '#110038';
-	
+    document.getElementById('SailorDbutton').style.background = '#EE3EFE';
+    document.getElementById('SailorNbutton').style.background = '#EE3EFE';
+    
     document.getElementById("myDiv").style.backgroundImage = 'linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%)';
     
 
 
     // image 
     document.getElementById('logoImg').style.display = "none";
+
+
 }
 
 //background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
