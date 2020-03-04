@@ -5,23 +5,27 @@ function elegirTema(){
 }
 function light() {
 	document.body.style.backgroundColor = '#fff4fd';
-	
-	
-}
-function dark(){
-	document.body.style.backgroundColor = '#110038';
-    // document.getElementByid('SailorDbutton').style.background = '#EE3EFE';
-    // document.getElementById('SailorNbutton').style.background = '#EE3EFE';
-    
-    // image 
-    var x = document.getElementsByClassName('boxheader');
-	for(var i = 0; i < x.length; i++){
-		x[i].style.boxheader;
-	}
+
+
+
+	//logo
+	document.getElementsByClassName('logoImg').className = 'logoImgDark1';
 }
 
-//background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+
+    // image 
+    // var x = document.getElementsByClassName('boxheader');
+	// for(var i = 0; i < x.length; i++){
+	// 	x[i].style.boxheader;
+	// }
 
 // background: #EE3EFE;
 
-//api key 
+
+function dark(){
+	document.body.style.backgroundColor = '#110038';
+	
+	
+	var dark = document.getElementById('buttonDropD');
+	dark.getElementsByClassName('buttonsHeader')[5].style.backgroundColor = '#EE3EFE';
+	}
