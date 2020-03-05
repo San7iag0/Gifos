@@ -8,8 +8,7 @@ function light() {
 
 
 
-	//logo
-	//document.getElementsByClassName('logoImg').className = 'logoImgDark1';
+
 }
 
 
@@ -25,9 +24,10 @@ function light() {
 function dark(){
 	document.body.style.backgroundColor = '#110038';
 	
-	var x = document.getElementsByClassName('buttonsHeader');
-	for (let i = 0; i < x.length; i++){
-		x[i].classList.replace('buttonsHeader','buttonsHeaderDark');
+	var night = document.getElementsByClassName('buttonsHeader');
+	for (let i = 0; i < night.length; i++){
+		night[i].classList.replace('buttonsHeader','buttonsHeaderDark');
+
 	}
 	
 		

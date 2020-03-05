@@ -14,6 +14,15 @@ body{
    color: #FFFFFF;
    letter-spacing: 0;
 }
+.titleDark{
+   grid-area: title;
+   font-family: ChakraPetch-Regular;
+   font-size: 15px;
+   height: 23px;
+   width: 1438px;
+   background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);   color: #FFFFFF;
+   letter-spacing: 0;
+}
 .header{
    grid-area: header;
    display: flex;
@@ -34,6 +43,21 @@ body{
    width: 131px;
    margin: 10px 0 0 10px;
  }
+ .buttonsHeaderDark{
+   font-family: ChakraPetch-Regular;
+   color: #110038;
+   letter-spacing: 0;
+   text-align: center;
+   line-height: 18px;
+   background: #EE3EFE;
+   border: 1px solid #110038;
+   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+   font-size: 16px;
+   height: 36px;
+   width: 131px;
+   margin: 10px 0 0 10px;
+ }
+ 
 .search{
    grid-area: search;
    background-color: #E6E6E6;
@@ -179,7 +203,7 @@ body{
 
 @media screen and (min-width: 736px){ 
    .grid{
-      display: grid;
+display: grid;
       grid-template-columns: 122px 597px 597px 122px;
       grid-template-rows:70px 145px 70px 610px 280px;
       grid-template-areas:
@@ -189,20 +213,28 @@ body{
           ". content_sugerencias content_sugerencias ."
           ". content content .";
    }
-      
+
 }
 .buttonDropD{
 	display: flex;
-    width: 420px;
+   width: 330px;
 }
+.headerInteractions{
+   
+      display: flex;
+      align-items: baseline;
+  }
+
 .dropdown {
    position: relative;
    display: inline-block;
 }
 .dropdownContent{
+   top: 96%;
+   right: -25%;
    display: none;
    position: absolute;
-   width: 170px;
+   width: 165px;
    height: 102px;
    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
    z-index: 1;
@@ -276,20 +308,6 @@ body{
 .logoImgDark1{
    display: none;
 }
-.buttonsHeaderDark{
-   font-family: ChakraPetch-Regular;
-   color: #110038;
-   letter-spacing: 0;
-   text-align: center;
-   line-height: 18px;
-   background: #EE3EFE;
-   border: 1px solid #110038;
-   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-   font-size: 16px;
-   height: 36px;
-   width: 131px;
-   margin: 10px 0 0 10px;
- }
 
 
- 
+
