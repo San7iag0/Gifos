@@ -9,7 +9,7 @@ function light() {
 
 
 	//logo
-	document.getElementsByClassName('logoImg').className = 'logoImgDark1';
+	//document.getElementsByClassName('logoImg').className = 'logoImgDark1';
 }
 
 
@@ -25,7 +25,16 @@ function light() {
 function dark(){
 	document.body.style.backgroundColor = '#110038';
 	
-	
-	var dark = document.getElementById('buttonDropD');
-	dark.getElementsByClassName('buttonsHeader')[5].style.backgroundColor = '#EE3EFE';
+	var x = document.getElementsByClassName('buttonsHeader');
+	for (let i = 0; i < x.length; i++){
+		x[i].classList.replace('buttonsHeader','buttonsHeaderDark');
 	}
+	
+		
+	}
+
+	// tagName 
+	// setattribute
+	// toggle
+	// cla
+

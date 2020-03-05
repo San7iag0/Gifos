@@ -273,6 +273,23 @@ body{
 
 /* +++++++++++++++++++++++ */
 
-/* .logoImgDark1{
+.logoImgDark1{
    display: none;
-} */
+}
+.buttonsHeaderDark{
+   font-family: ChakraPetch-Regular;
+   color: #110038;
+   letter-spacing: 0;
+   text-align: center;
+   line-height: 18px;
+   background: #EE3EFE;
+   border: 1px solid #110038;
+   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+   font-size: 16px;
+   height: 36px;
+   width: 131px;
+   margin: 10px 0 0 10px;
+ }
+
+
+ 
