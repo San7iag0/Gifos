@@ -30,6 +30,17 @@ body{
    display: flex;
    justify-content: space-between;
 }
+.imggifoslog{
+   content: url(./../Images/gifOF_logo.png);
+   width: 102.6px;
+   height: 64px;
+}
+.imggifoslogDark{
+   content: url(./../Images/gifOF_logo_dark.png);
+   width: 102.6px;
+   height: 64px;
+}
+
 /* botones y icono de gifos en heather */
 .buttonsHeader{
    font-family: ChakraPetch-Regular;
@@ -76,6 +87,17 @@ body{
    height: 23px;
    background-image: linear-gradient(to right, #4180F6, #F7C9F3);
 }
+.buscarDark{
+   display: flex;
+   align-items: center;
+   font-family: ChakraPetch-Bold;
+   font-size: 14px;
+   color: #FFFFFF;
+   letter-spacing: 0;   
+   height: 23px;
+   background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+}
+
 .searchChil{
    display: flex;
    justify-content: center;

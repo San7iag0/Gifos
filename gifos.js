@@ -8,15 +8,12 @@ function elegirTema(){
 function light() {
 	document.body.style.backgroundColor = '#fff4fd';
 
+
 	
+	
+
 }
 
-
-    // image 
-    // var x = document.getElementsByClassName('boxheader');
-	// for(var i = 0; i < x.length; i++){
-	// 	x[i].style.boxheader;
-	// }
 
 // background: #EE3EFE;
 
@@ -24,14 +21,35 @@ function light() {
 function dark(){
 	document.body.style.backgroundColor = '#110038';
 	
-	var night = document.getElementsByClassName('buttonsHeader');
-		for (let i = 0; i < night.length; i++){
-			night[i].classList.replace('buttonsHeader','buttonsHeaderDark');
-
-		}
+	var ttd = document.getElementsByClassName('title');
+	var icons = document.getElementsByClassName('imggifoslog');
+	var bsh = document.getElementsByClassName('buttonsHeader');
 	
-	var titleDark = document.getElementById('title');
-		titleDark.classList.toggle('titleDark');
+	var bsd	= document.getElementsByClassName('buscar');
+	
+		for (let i = 0; i < ttd.length; i++){
+			ttd[i].classList.replace('title', 'titleDark')
+		}	
+	
+		for (let i = 0; i < icons.length; i++){
+			icons[i].classList.replace('imggifoslog', 'imggifoslogDark');
+		}
+		
+		for (let i = 0; i < bsh.length; i++){
+			bsh[i].classList.replace('buttonsHeader','buttonsHeaderDark');
+		}
+
+		
+
+		for (let i = 0; i < bsd.length; i++){
+			bsd[i].classList.replace('buscar', 'buscarDark')
+		}
+
+
+		
+	
+	// var titleDark = document.getElementById('title');
+	// 	titleDark.classList.toggle('titleDark');
 	}
 
 
