@@ -3,12 +3,12 @@ const apiKey = 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW';
 function elegirTema(){
 	document.getElementById("dropD").classList.toggle("show");
 }
+
+
 function light() {
 	document.body.style.backgroundColor = '#fff4fd';
 
-
-
-
+	
 }
 
 
@@ -25,16 +25,16 @@ function dark(){
 	document.body.style.backgroundColor = '#110038';
 	
 	var night = document.getElementsByClassName('buttonsHeader');
-	for (let i = 0; i < night.length; i++){
-		night[i].classList.replace('buttonsHeader','buttonsHeaderDark');
+		for (let i = 0; i < night.length; i++){
+			night[i].classList.replace('buttonsHeader','buttonsHeaderDark');
 
-	}
+		}
 	
-		
+	var titleDark = document.getElementById('title');
+		titleDark.classList.toggle('titleDark');
 	}
 
-	// tagName 
+
 	// setattribute
 	// toggle
-	// cla
 

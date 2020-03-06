@@ -20,7 +20,9 @@ body{
    font-size: 15px;
    height: 23px;
    width: 1438px;
-   background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);   color: #FFFFFF;
+   background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+   box-shadow: 0 1px 0 0 #110038;
+   color: #FFFFFF;
    letter-spacing: 0;
 }
 .header{
@@ -43,9 +45,9 @@ body{
    width: 131px;
    margin: 10px 0 0 10px;
  }
- .buttonsHeaderDark{
+.buttonsHeaderDark{
    font-family: ChakraPetch-Regular;
-   color: #110038;
+   color: #FFFFFF;
    letter-spacing: 0;
    text-align: center;
    line-height: 18px;
@@ -151,7 +153,7 @@ body{
    height:24px;
    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%); 
 }
-.boxheader1{
+.boxheaderDark{
    display: grid;
    justify-content: end;
    align-items: center;
