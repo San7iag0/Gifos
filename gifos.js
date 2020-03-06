@@ -15,42 +15,36 @@ function light() {
 }
 
 
-// background: #EE3EFE;
-
-
+// change style by DOM JS to Dark 
 function dark(){
 	document.body.style.backgroundColor = '#110038';
 	
-	var ttd = document.getElementsByClassName('title');
-	var icons = document.getElementsByClassName('imggifoslog');
-	var bsh = document.getElementsByClassName('buttonsHeader');
+	var titleDarkStyle = document.getElementsByClassName('title');
+	var iconsgifosDarkStyle = document.getElementsByClassName('imggifoslog');
+	var buttonHeaderDarkStyle = document.getElementsByClassName('buttonsHeader');	
+	var buscarDarkStyle	= document.getElementsByClassName('buscar');
+	var boxheaderDarkStyle = document.getElementsByClassName('boxheader');
 	
-	var bsd	= document.getElementsByClassName('buscar');
-	
-		for (let i = 0; i < ttd.length; i++){
-			ttd[i].classList.replace('title', 'titleDark')
+		for (let i = 0; i < titleDarkStyle.length; i++){
+			titleDarkStyle[i].classList.replace('title', 'titleDark')
 		}	
 	
-		for (let i = 0; i < icons.length; i++){
-			icons[i].classList.replace('imggifoslog', 'imggifoslogDark');
+		for (let i = 0; i < iconsgifosDarkStyle.length; i++){
+			iconsgifosDarkStyle[i].classList.replace('imggifoslog', 'imggifoslogDark');
 		}
 		
-		for (let i = 0; i < bsh.length; i++){
-			bsh[i].classList.replace('buttonsHeader','buttonsHeaderDark');
+		for (let i = 0; i < buttonHeaderDarkStyle.length; i++){
+			buttonHeaderDarkStyle[i].classList.replace('buttonsHeader','buttonsHeaderDark');
 		}
 
-		
-
-		for (let i = 0; i < bsd.length; i++){
-			bsd[i].classList.replace('buscar', 'buscarDark')
+		for (let i = 0; i < buscarDarkStyle.length; i++){
+			buscarDarkStyle[i].classList.replace('buscar', 'buscarDark')
 		}
 
-
-		
-	
-	// var titleDark = document.getElementById('title');
-	// 	titleDark.classList.toggle('titleDark');
-	}
+		for (let i = 0; i < boxheaderDarkStyle.length; i++){
+			boxheaderDarkStyle[i].classList.replace('boxheader', 'boxheaderDark')
+		}
+}
 
 
 	// setattribute
