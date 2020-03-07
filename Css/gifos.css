@@ -78,15 +78,16 @@ body{
    height: 99px; 
 }
 .buscar{
+   color: #FFFFFF;
    display: flex;
    align-items: center;
    font-family: ChakraPetch-Bold;
    font-size: 14px;
-   color: #FFFFFF;
    letter-spacing: 0;   
    height: 23px;
    background-image: linear-gradient(to right, #4180F6, #F7C9F3);
 }
+
 .buscarDark{
    display: flex;
    align-items: center;
@@ -107,7 +108,7 @@ body{
 .searchChil input{
    font-family: ChakraPetch-Regular;
    font-size: 16px;
-   color: #B4B4B4;
+   /* color: #B4B4B4; */
    letter-spacing: 0;
    line-height: 22px;
 
@@ -223,7 +224,6 @@ body{
    grid-gap: 10px;
 }
 
-
 @media screen and (min-width: 736px){ 
    .grid{
 display: grid;
@@ -263,11 +263,22 @@ display: grid;
    z-index: 1;
    background: #E6E6E6;
 }
+.dropdownContentDark{
+   top: 96%;
+   right: -25%;
+   display: none;
+   position: absolute;
+   width: 165px;
+   height: 102px;
+   box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+   z-index: 1;
+   background: #B4B4B4;
+}
  
 .show{
    display:block;
 }
-.SailorDbutton{
+.sailorDbutton{
    font-family: ChakraPetch-Regular;
    font-size: 16px;
    color: #110038;
@@ -281,7 +292,22 @@ display: grid;
    border: 1px solid #CCA6C9;
    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
 }
-.SailorNbutton{
+.sailorDbuttonDark{
+   font-family: ChakraPetch-Regular;
+   font-size: 16px;
+   color: #110038;
+   letter-spacing: 0;
+   line-height: 22px;
+
+   width: 150px;
+   height: 36px;
+   margin: 10px 10px 5px 10px;
+   background: #CCCCCC;
+   border: 1px solid #808080;
+   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.sailorNbutton{
    font-family: ChakraPetch-Regular;
    font-size: 16px;
    color: #110038;
@@ -291,9 +317,24 @@ display: grid;
    width: 150px;
    height: 36px;
    margin: 5px 10px 10px 10px;
-   background: #F0F0F0;
-   border: 1px solid #808080;
-   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+   background: #FFF4FD;
+   border: 1px solid #CCA6C9;
+   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+   
+}
+.sailorNbuttonDark{
+   font-family: ChakraPetch-Regular;
+   font-size: 16px;
+   color: #FFFFFF;
+   letter-spacing: 0;
+   line-height: 22px;
+
+   width: 150px;
+   height: 36px;
+   margin: 5px 10px 10px 10px;
+   background: #2E32FB;
+   border: 1px solid rgba(51,53,143,0.20);
+   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
 }
 
 .arrow {

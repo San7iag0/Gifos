@@ -18,23 +18,32 @@ function light() {
 	let buttonHeaderDayStyle = document.getElementsByClassName('buttonsHeaderDark');
 	let buscarDayStyle = document.getElementsByClassName('buscarDark');
 	let boxheaderDayStyle = document.getElementsByClassName('boxheaderDark');
+	let dropdownDayStyle = document.getElementsByClassName('dropdownContentDark');
+	let sailorDaybutton = document.getElementsByClassName('sailorDbuttonDark'); 
+	let sailorNbuttonDayStyle = document.getElementsByClassName('sailorNbuttonDark');
 
 		for (let i = 0; i < titleDayStyle.length; i++){
 			titleDayStyle[i].classList.replace('titleDark', 'title');
 		}
-
 		for (let i = 0; i < buttonHeaderDayStyle.length; i++){
 			buttonHeaderDayStyle[i].classList.replace('buttonsHeaderDark', 'buttonsHeader'); 
 		}
-
 		for(let i = 0; i < buscarDayStyle.length; i++){
 			buscarDayStyle[i].classList.replace('buscarDark', 'buscar');
 		}
-
-		for(var i = 0; i < boxheaderDayStyle.length; i++){
+		for(let i = 0; i < boxheaderDayStyle.length; i++){
 			boxheaderDayStyle[i].classList.replace('boxheaderDark', 'boxheader');
 		}		
-	
+		for(let i = 0; i < dropdownDayStyle.length; i++){
+			dropdownDayStyle[i].classList.replace('dropdownContentDark', 'dropdownContent');
+		}
+		for(let i = 0; i < sailorDaybutton.length; i++){
+			sailorDaybutton[i].classList.replace('sailorDbuttonDark', 'sailorDbutton');
+		}
+		for(let i = 0; i < sailorNbuttonDayStyle.length; i++){
+			sailorNbuttonDayStyle[i].classList.replace('sailorNbuttonDark', 'sailorNbutton');
+		}
+
 }
 
 
@@ -47,29 +56,63 @@ function dark(){
 	let buttonHeaderDarkStyle = document.getElementsByClassName('buttonsHeader');	
 	let buscarDarkStyle	= document.getElementsByClassName('buscar');
 	let boxheaderDarkStyle = document.getElementsByClassName('boxheader');
+	let dropdownDarkStyle = document.getElementsByClassName('dropdownContent');
+	let sailorDbuttonDarkStyle = document.getElementsByClassName('sailorDbutton');
+	let sailorNbuttonDarkStyle = document.getElementsByClassName('sailorNbutton');
 	
 		for (let i = 0; i < titleDarkStyle.length; i++){
-			titleDarkStyle[i].classList.replace('title', 'titleDark')
+			titleDarkStyle[i].classList.replace('title', 'titleDark');
 		}	
-	
 		for (let i = 0; i < iconsgifosDarkStyle.length; i++){
 			iconsgifosDarkStyle[i].classList.replace('imggifoslog', 'imggifoslogDark');
-		}
-		
+		}		
 		for (let i = 0; i < buttonHeaderDarkStyle.length; i++){
 			buttonHeaderDarkStyle[i].classList.replace('buttonsHeader','buttonsHeaderDark');
 		}
-
 		for (let i = 0; i < buscarDarkStyle.length; i++){
-			buscarDarkStyle[i].classList.replace('buscar', 'buscarDark')
+			buscarDarkStyle[i].classList.replace('buscar', 'buscarDark');
 		}
-
 		for (let i = 0; i < boxheaderDarkStyle.length; i++){
-			boxheaderDarkStyle[i].classList.replace('boxheader', 'boxheaderDark')
+			boxheaderDarkStyle[i].classList.replace('boxheader', 'boxheaderDark');
 		}
+		for (let i = 0; i < dropdownDarkStyle.length; i++){
+			dropdownDarkStyle[i].classList.replace('dropdownContent', 'dropdownContentDark');
+		}
+		for (let i = 0; i < sailorDbuttonDarkStyle.length; i++){
+			sailorDbuttonDarkStyle[i].classList.replace('sailorDbutton', 'sailorDbuttonDark');
+		}
+		for (let i = 0; i < sailorNbuttonDarkStyle.length; i++){
+			sailorNbuttonDarkStyle[i].classList.replace('sailorNbutton', 'sailorNbuttonDark');
+		}
+		
+
 }
 
 
-	// setattribute
-	// toggle
 
+//functions gids 
+
+function boxes(){
+	let contenedor = document.getElementById("contenedor");
+	for (let i = 0; i < 20; i++) {
+		let div = document.createElement("div");
+		div.className = "box";
+		contenedor.appendChild(div);
+	}
+}
+  
+function searchGif(searchGif) {
+	const found = fetch('http://api.giphy.com/v1/gifs/search?q=' + searchGif + '&api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW')
+		.then(response => {
+			return response.json();
+		})
+		.then(data => {
+				console.log(data);
+			return data;
+			
+		})
+		.catch(error => {
+			return error;
+		});
+	return found;
+	}
