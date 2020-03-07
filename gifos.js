@@ -8,17 +8,32 @@ function elegirTema(){
 function light() {
 	document.body.style.backgroundColor = '#fff4fd';
 
-//	let iconsgifosStyle = document.getElementsByClassName('imggifoslog');
-
-		//for(let i = 0; i < iconsgifosStyle.length; i++){
-		//	iconsgifosStyle[i].classList.replace('imggifoslogDark', 'imggifoslog');
-		//}
-
+	// change style ICon to light 
 	let imggifoslog = document.getElementById('imggifoslogId');
-	//iconsgifosStyle.classList.toggle('imggifoslogDark');
-	imggifoslog.classList.add('imggifoslog');
-	imggifoslog.classList.remove('imggifoslogDark')
+		imggifoslog.classList.add('imggifoslog');
+		imggifoslog.classList.remove('imggifoslogDark');
 
+	// change style to light 	
+	let titleDayStyle = document.getElementsByClassName('titleDark');
+	let buttonHeaderDayStyle = document.getElementsByClassName('buttonsHeaderDark');
+	let buscarDayStyle = document.getElementsByClassName('buscarDark');
+	let boxheaderDayStyle = document.getElementsByClassName('boxheaderDark');
+
+		for (let i = 0; i < titleDayStyle.length; i++){
+			titleDayStyle[i].classList.replace('titleDark', 'title');
+		}
+
+		for (let i = 0; i < buttonHeaderDayStyle.length; i++){
+			buttonHeaderDayStyle[i].classList.replace('buttonsHeaderDark', 'buttonsHeader'); 
+		}
+
+		for(let i = 0; i < buscarDayStyle.length; i++){
+			buscarDayStyle[i].classList.replace('buscarDark', 'buscar');
+		}
+
+		for(var i = 0; i < boxheaderDayStyle.length; i++){
+			boxheaderDayStyle[i].classList.replace('boxheaderDark', 'boxheader');
+		}		
 	
 }
 
