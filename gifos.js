@@ -43,10 +43,7 @@ function light() {
 		for(let i = 0; i < sailorNbuttonDayStyle.length; i++){
 			sailorNbuttonDayStyle[i].classList.replace('sailorNbuttonDark', 'sailorNbutton');
 		}
-
 }
-
-
 // change style by DOM JS to Dark 
 function dark(){
 	document.body.style.backgroundColor = '#110038';
@@ -84,11 +81,7 @@ function dark(){
 		for (let i = 0; i < sailorNbuttonDarkStyle.length; i++){
 			sailorNbuttonDarkStyle[i].classList.replace('sailorNbutton', 'sailorNbuttonDark');
 		}
-		
-
 }
-
-
 
 //functions gids 
 
