@@ -8,10 +8,18 @@ function elegirTema(){
 function light() {
 	document.body.style.backgroundColor = '#fff4fd';
 
+//	let iconsgifosStyle = document.getElementsByClassName('imggifoslog');
+
+		//for(let i = 0; i < iconsgifosStyle.length; i++){
+		//	iconsgifosStyle[i].classList.replace('imggifoslogDark', 'imggifoslog');
+		//}
+
+	let imggifoslog = document.getElementById('imggifoslogId');
+	//iconsgifosStyle.classList.toggle('imggifoslogDark');
+	imggifoslog.classList.add('imggifoslog');
+	imggifoslog.classList.remove('imggifoslogDark')
 
 	
-	
-
 }
 
 
@@ -19,11 +27,11 @@ function light() {
 function dark(){
 	document.body.style.backgroundColor = '#110038';
 	
-	var titleDarkStyle = document.getElementsByClassName('title');
-	var iconsgifosDarkStyle = document.getElementsByClassName('imggifoslog');
-	var buttonHeaderDarkStyle = document.getElementsByClassName('buttonsHeader');	
-	var buscarDarkStyle	= document.getElementsByClassName('buscar');
-	var boxheaderDarkStyle = document.getElementsByClassName('boxheader');
+	let titleDarkStyle = document.getElementsByClassName('title');
+	let iconsgifosDarkStyle = document.getElementsByClassName('imggifoslog');
+	let buttonHeaderDarkStyle = document.getElementsByClassName('buttonsHeader');	
+	let buscarDarkStyle	= document.getElementsByClassName('buscar');
+	let boxheaderDarkStyle = document.getElementsByClassName('boxheader');
 	
 		for (let i = 0; i < titleDarkStyle.length; i++){
 			titleDarkStyle[i].classList.replace('title', 'titleDark')
