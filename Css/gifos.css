@@ -193,7 +193,8 @@ body{
    display:grid;
    width: 280px;
    height: 280px;
-   background:#E6E6E6;   
+   background:#E6E6E6; 
+   margin: 5px;  
 }
 
 .buttonVerMas{

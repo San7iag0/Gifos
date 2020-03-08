@@ -85,15 +85,16 @@ function dark(){
 
 //functions gids 
 
-function boxes(){
-	let contenedor = document.getElementById("contenedor");
+//created automatically the new boxes 
+window.onload = () => {
+	let contenedor = document.getElementById("content");
 	for (let i = 0; i < 20; i++) {
 		let div = document.createElement("div");
 		div.className = "box";
 		contenedor.appendChild(div);
 	}
 }
-  
+
 function searchGif(searchGif) {
 	const found = fetch('http://api.giphy.com/v1/gifs/search?q=' + searchGif + '&api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW')
 		.then(response => {
@@ -109,3 +110,5 @@ function searchGif(searchGif) {
 		});
 	return found;
 	}
+
+	
