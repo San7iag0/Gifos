@@ -44,10 +44,12 @@ function light() {
 			sailorNbuttonDayStyle[i].classList.replace('sailorNbuttonDark', 'sailorNbutton');
 		}
 }
-// change style by DOM JS to Dark 
+/**
+ * change style by DOM JS to Dark
+ */ 
 function dark(){
 	document.body.style.backgroundColor = '#110038';
-	
+
 	let titleDarkStyle = document.getElementsByClassName('title');
 	let iconsgifosDarkStyle = document.getElementsByClassName('imggifoslog');
 	let buttonHeaderDarkStyle = document.getElementsByClassName('buttonsHeader');	
@@ -83,15 +85,37 @@ function dark(){
 		}
 }
 
+function test() {
+	let buttonHeaderDarkStyle = document.getElementsByClassName('buttonsHeader');
+
+	for (let i = buttonHeaderDarkStyle.length -1; i => 0; i= buttonHeaderDarkStyle.length -1) {
+		buttonHeaderDarkStyle[i].classList.replace('buttonsHeader','buttonsHeaderDark');
+	}
+}
+
 //functions gids 
 
 //created automatically the new boxes 
 window.onload = () => {
 	let contenedor = document.getElementById("content");
 	for (let i = 0; i < 20; i++) {
+		let gato = fetch('http://api.giphy.com/v1/gifs/search?q=' + '&api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW')
+		.then(response => {
+			return response.json();x
+		})
+		.then(data => {
+			console.log(data);
+		return data;
+		})
+		.catch(error => {
+ 			return error;
+ 		});
+	
+
 		let div = document.createElement("div");
 		div.className = "box";
 		contenedor.appendChild(div);
+	
 	}
 }
 
