@@ -134,11 +134,11 @@ body{
    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
    
 }
-.content_sugerencias{
+/* .content_sugerencias{
    grid-area:content;
    align-self: center;
    display: grid;
-}
+} */
 /* barra Hoy te sugerimos  */
 .sugerencias{
    font-family: ChakraPetch-Regular;
@@ -215,7 +215,7 @@ body{
 }
 
 .searchGIts{
-   grid-area: ;
+   grid-area:searchGIts;
 }
 .content_sugerencias{
    grid-area:content_sugerencias;
@@ -233,7 +233,7 @@ body{
    .grid{
 display: grid;
       grid-template-columns: 122px 597px 597px 122px;
-      grid-template-rows:70px 145px 70px 610px auto 280px;
+      grid-template-rows:70px 145px 100px 410px auto 280px;
       grid-template-areas:
           "title title title title"
           ". header header ."
