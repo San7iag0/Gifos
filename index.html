@@ -22,11 +22,14 @@
                     <div class="dropdown">
                         
                         <button onclick="elegirTema()" class="buttonsHeader">Elegir Tema</button>
-                        <div class="arrow"></div>
-                        <div class= "dropdownContent" id="dropD">	
-                            <button onclick="light()"class="sailorDbutton">Sailor Day</button>
-                            <button onclick="dark()"class="sailorNbutton">Sailor night</button>
-                        </div>
+                        
+                            <div class="arrow"></div>
+                            <div class= "dropdownContent"id="dropD">	
+                                
+                                <button onclick="light()"class="sailorDbutton">Sailor Day</button>
+                                <button onclick="dark()"class="sailorNbutton">Sailor night</button>
+                            </div>
+                        
                         
                     </div>
                 </div>
@@ -40,13 +43,21 @@
                 <button onclick="searchGif()"><img src="./Images/Combined Shape.svg" alt=""> Buscar</button>
             </div>
         </div>
+        <div class="searchGIts">
+                <div class="searchResult"> 
+                    <p id="searchGItsText">asdf</p>
+                </div>
+                <div id="dynamicGifts"></div>
+        </div>
         <div class="content_sugerencias">
             <div class="sugerencias"> 
-                <p>Hoy te sugerimos</p></div>
+                <p>Hoy te sugerimos</p>
+            </div>
             <div class="boxgifossug">
                 <div class="container">
                    <div class="boxheader"><img src="./Images/button close.svg" alt="boton de cerrado de la ventana" class="xImage"></div>
                    <div class="box">
+                    <div id="advice"></div>
                     <button onclick="verMas()" class="buttonVerMas">Ver mas...</button>
                 </div>
              </div>
@@ -72,9 +83,6 @@
              </div>
              
         </div>
-        <div class="searchGIts">
-            <div id="dynamicGifts"></div>
-        </div>
         <div class="content" id="content">    
             <div class="sugerencias">
                 <p>Tendecias</p>
@@ -82,7 +90,6 @@
                        
         </div>   
     </div>
-    
     
     <script src="gifos.js"></script>
 </body>

@@ -134,11 +134,7 @@ body{
    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
    
 }
-/* .content_sugerencias{
-   grid-area:content;
-   align-self: center;
-   display: grid;
-} */
+
 /* barra Hoy te sugerimos  */
 .sugerencias{
    font-family: ChakraPetch-Regular;
@@ -150,7 +146,7 @@ body{
    grid-column: 1/5;
    align-items: center;
    height: 32px;
-   width:1200;
+   width:1200px;
    background:#FFFAFE;
    border: solid 1px #E6BBE2;
    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80887D;
@@ -166,9 +162,7 @@ body{
 }
 
 /* hoy te sugerimos  */
-.container{
-   box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-}
+
 .boxheader{
    display: grid;
    justify-content: end;
@@ -194,7 +188,9 @@ body{
    width: 280px;
    height: 280px;
    background:#E6E6E6; 
-   margin: 5px;  
+   margin-bottom: 20px;   
+   box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+ 
 }
 
 .buttonVerMas{
@@ -217,6 +213,35 @@ body{
 
 .searchGIts{
    grid-area:searchGIts;
+   display: flex;
+   flex-wrap: wrap;
+}
+#dynamicGifts{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   margin-top: 30px;
+}
+.searchResult1{
+   display: flex;
+}
+.searchResult{
+   display: none;
+   font-family: ChakraPetch-Regular;
+   font-size: 14px;
+   color: #110038;
+   letter-spacing: 0;
+
+   
+   align-items: center;
+   height: 32px;
+   width:1200px;
+   background:#FFFAFE;
+   border: solid 1px #E6BBE2;
+   box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80887D;
+   
+   padding:0 0 0 5px;
+   margin: 30px 0 30px 0;
 }
 .content_sugerencias{
    grid-area:content_sugerencias;
@@ -233,14 +258,15 @@ body{
 @media screen and (min-width: 736px){ 
    .grid{
 display: grid;
-      grid-template-columns: 122px 597px 597px 122px;
-      grid-template-rows:70px 145px 100px 410px auto 280px;
+      grid-template-columns: 122px 600px 600px 122px;
+      grid-template-rows:70px 145px 100px auto 410px  280px;
       grid-template-areas:
           "title title title title"
           ". header header ."
           ". search search ."
-          ". content_sugerencias content_sugerencias ."
           ". searchGIts searchGIts  ."
+          ". content_sugerencias content_sugerencias ."
+          
           ". content content .";
    }
 

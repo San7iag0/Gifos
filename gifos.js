@@ -95,12 +95,17 @@ function test() {
 
 //functions gids 
 
-//created automatically the new boxes 
+
+// function onload width ramdom gits 
 window.onload = () => {
-	let contenedor = document.getElementById("content");
-	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q=perro&api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW', "content");
+	// let contenedor = document.getElementById("content");
+	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= dog &api_key=' + apiKey, "content");
+	
+	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= cats &api_key=' + apiKey + "&limit=1" + 'advice');
+
 }
 
+// original funtion with the URL and Json 
 function createBoxesWithGifts(url, contentId) {
 	fetch(url)
 		.then(response => {
@@ -115,7 +120,11 @@ function createBoxesWithGifts(url, contentId) {
  		});
 }
 
+
 function printGiftBoxes(listGift, contentId) {
+
+	removeOldBoxes("dynamicGifts");
+
 	let contenedor = document.getElementById(contentId);
 	for (let i = 0; i < listGift.length -1; i++) {
 		let div = document.createElement("img");
@@ -126,14 +135,19 @@ function printGiftBoxes(listGift, contentId) {
 }
 
 
-function removeOldBoxes() {
-	
+
+function removeOldBoxes(parentClass) {
+	const myNode = document.getElementById(parentClass);
+  	myNode.innerHTML = '';
 }
 
-
+// function to look up the gits from the search input 
 function searchGif() {
 	let searchText = document.getElementById("inputSearch").value;
-	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q=${searchText}&api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW`, "dynamicGifts");
+	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q=${searchText}&api_key=` + apiKey, "dynamicGifts");
+
+	searchResult[0] = "flex";
+	
 }
 
 	
