@@ -98,41 +98,42 @@ function test() {
 //created automatically the new boxes 
 window.onload = () => {
 	let contenedor = document.getElementById("content");
-	for (let i = 0; i < 20; i++) {
-		let gato = fetch('http://api.giphy.com/v1/gifs/search?q=' + '&api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW')
+	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q=perro&api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW', "content");
+}
+
+function createBoxesWithGifts(url, contentId) {
+	fetch(url)
 		.then(response => {
-			return response.json();x
+			return response.json();
 		})
-		.then(data => {
-			console.log(data);
+		.then(dataList => {
+			printGiftBoxes(dataList.data, contentId);
 		return data;
 		})
 		.catch(error => {
  			return error;
  		});
-	
+}
 
-		let div = document.createElement("div");
-		div.className = "box";
+function printGiftBoxes(listGift, contentId) {
+	let contenedor = document.getElementById(contentId);
+	for (let i = 0; i < listGift.length -1; i++) {
+		let div = document.createElement("img");
+		div.className = "box"; 
+		div.setAttribute("src",listGift[i].images.original.webp);
 		contenedor.appendChild(div);
-	
 	}
 }
 
-function searchGif(searchGif) {
-	const found = fetch('http://api.giphy.com/v1/gifs/search?q=' + searchGif + '&api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW')
-		.then(response => {
-			return response.json();
-		})
-		.then(data => {
-				console.log(data);
-			return data;
-			
-		})
-		.catch(error => {
-			return error;
-		});
-	return found;
-	}
+
+function removeOldBoxes() {
+	
+}
+
+
+function searchGif() {
+	let searchText = document.getElementById("inputSearch").value;
+	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q=${searchText}&api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW`, "dynamicGifts");
+}
 
 	
