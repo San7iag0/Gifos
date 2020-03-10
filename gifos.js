@@ -147,7 +147,6 @@ function searchGif() {
 	let searchText = document.getElementById("inputSearch").value;
 	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q=${searchText}&api_key=` + apiKey, "dynamicGifts");
 
-	searchResult[0] = "flex";
 	
 }
 
