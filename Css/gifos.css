@@ -194,6 +194,7 @@ body{
 }
 
 .buttonVerMas{
+  
    font-family: ChakraPetch-Regular;
    font-size: 14px;
    color: #FFFFFF;
@@ -209,6 +210,10 @@ body{
    background:#4180f6;
    border: 1px solid #4C2F99;
    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+
+   position: absolute;
+   z-index: 1;
+   
 }
 
 .searchGIts{
@@ -259,15 +264,14 @@ body{
    .grid{
 display: grid;
       grid-template-columns: 122px 600px 600px 122px;
-      grid-template-rows:70px 145px 100px auto 410px  280px;
+      grid-template-rows:70px 145px 100px 610px auto 280px;
       grid-template-areas:
-          "title title title title"
-          ". header header ."
-          ". search search ."
-          ". searchGIts searchGIts  ."
-          ". content_sugerencias content_sugerencias ."
-          
-          ". content content .";
+         "title title title title"
+         ". header header ."
+         ". search search ."
+         ". content_sugerencias content_sugerencias ."
+         ". searchGIts searchGIts  ."
+         ". content content .";
    }
 
 }

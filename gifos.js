@@ -4,7 +4,6 @@ function elegirTema(){
 	document.getElementById("dropD").classList.toggle("show");
 }
 
-
 function light() {
 	document.body.style.backgroundColor = '#fff4fd';
 
@@ -101,8 +100,10 @@ window.onload = () => {
 	// let contenedor = document.getElementById("content");
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= dog &api_key=' + apiKey, "content");
 	
-	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= cats &api_key=' + apiKey + "&limit=1" + 'advice');
-
+	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= cats &api_key=' + apiKey + "&limit=2", 'advice');
+	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= vegeta &api_key=' + apiKey + "&limit=2", 'advice1');
+	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= goku &api_key=' + apiKey + "&limit=2", 'advice2');
+	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= broly &api_key=' + apiKey + "&limit=2", 'advice3');
 }
 
 // original funtion with the URL and Json 
