@@ -147,7 +147,10 @@ function searchGif() {
 	let searchText = document.getElementById("inputSearch").value;
 	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q=${searchText}&api_key=` + apiKey, "dynamicGifts");
 
-	changeText()
+	changeText();
+
+	historySearch(); 
+
 }
 
 function changeText(){
@@ -155,4 +158,21 @@ function changeText(){
 	document.getElementById("sugText").innerHTML = x;
 }
 
+function historySearch(){ 
+	//toma el valor de input
+	  let textInp = document.getElementById("inputSearch").value;
+	  
+	  // crea el boton 
+	  var newButton = document.createElement("BUTTON");
+	  
+	  //da nombre al nuevo boton 
+		newButton.setAttribute("id", "button1");
 	
+		// newButton.setAttribute("value", textInp);
+		//   document.getElementById("button1").value = textInp;
+		newButton.innerHTML = textInp
+	  
+	  //inprime el nuevo boton 
+		document.body.appendChild(newButton);
+		//btn.innerHTML = "CLICK ME";
+}
