@@ -121,7 +121,6 @@ function createBoxesWithGifts(url, contentId) {
  		});
 }
 
-
 function printGiftBoxes(listGift, contentId) {
 
 	removeOldBoxes("dynamicGifts");
@@ -134,8 +133,6 @@ function printGiftBoxes(listGift, contentId) {
 		contenedor.appendChild(div);
 	}
 }
-
-
 
 function removeOldBoxes(parentClass) {
 	const myNode = document.getElementById(parentClass);
@@ -158,21 +155,16 @@ function changeText(){
 	document.getElementById("sugText").innerHTML = x;
 }
 
+
 function historySearch(){ 
 	//toma el valor de input
-	  let textInp = document.getElementById("inputSearch").value;
-	  
-	  // crea el boton 
-	  var newButton = document.createElement("BUTTON");
-	  
-	  //da nombre al nuevo boton 
+		let textInp = document.getElementById("inputSearch").value;
+	// crea el boton 
+		var newButton = document.createElement("BUTTON");  
+	//da nombre al nuevo boton 
 		newButton.setAttribute("id", "button1");
-	
-		// newButton.setAttribute("value", textInp);
-		//   document.getElementById("button1").value = textInp;
-		newButton.innerHTML = textInp
-	  
-	  //inprime el nuevo boton 
-		document.body.appendChild(newButton);
-		//btn.innerHTML = "CLICK ME";
-}
+		newButton.innerHTML = "#" + textInp;
+	//inprime el nuevo boton 
+		newButton.setAttribute("class", "sugbuttons")
+		document.getElementById("sugerencias").appendChild(newButton);
+	}

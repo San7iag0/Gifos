@@ -135,6 +135,9 @@ body{
    
 }
 
+.HistoryBox{
+   grid-area: HistoryBox;
+}
 /* barra Hoy te sugerimos  */
 .sugerencias{
    font-family: ChakraPetch-Regular;
@@ -245,11 +248,12 @@ body{
    .grid{
 display: grid;
       grid-template-columns: 122px 600px 600px 122px;
-      grid-template-rows:70px 145px 100px 510px auto 280px;
+      grid-template-rows:70px 145px 100px auto 510px auto 280px;
       grid-template-areas:
          "title title title title"
          ". header header ."
          ". search search ."
+         ". HistoryBox HistoryBox ."
          ". content_sugerencias content_sugerencias ."
          ". searchGIts searchGIts  ."
          ". content content .";
@@ -393,3 +397,21 @@ display: grid;
 
 
 
+/* ************************************* */
+
+.sugbuttons{
+	font-family: chakraPetch-Regular;
+	font-size:14px;
+	color:#FFFFFF;
+	letter-spacing:0;
+	line-height:18px;
+	
+	width:100px;
+	height:34px;
+	
+	background: #4180F6;
+	border: 1px solid #4C2F99;
+	box-shadow: inset -2px -2px 0 0 #284F99,inset 2px 2px 0 0 #FFFFFF;
+	
+	margin:5px;
+}
