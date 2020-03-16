@@ -55,6 +55,7 @@ body{
    height: 36px;
    width: 131px;
    margin: 10px 0 0 10px;
+   text-decoration: none;
  }
 .buttonsHeaderDark{
    font-family: ChakraPetch-Regular;
@@ -70,6 +71,12 @@ body{
    width: 131px;
    margin: 10px 0 0 10px;
  }
+ .buttonsHeader:hover{
+   outline: 1px dashed #110038;
+   outline-offset: -4px;
+   color: white;
+   box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
+}
  
 .search{
    grid-area: search;
@@ -382,12 +389,7 @@ display: grid;
 
 /* ++++++++++++++++++ */
 
-.buttonsHeader:hover{
-   outline: 1px dashed #110038;
-   outline-offset: -4px;
-   color: white;
-   box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
-}
+
 
 /* +++++++++++++++++++++++ */
 
