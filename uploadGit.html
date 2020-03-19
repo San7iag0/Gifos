@@ -52,7 +52,9 @@
             </div> 
 			<div class="videoParent">
                 <div class="titleV">Un Chequeo Antes de Empezar</div>
-                <div class="videoBox"></div>
+                <div class="videoBox">
+                    <video src=""></video>
+                </div>
                 <div class="capturar" >
                     <div class="camera"></div>
                     <button id="capturar" class="capturarBox">Capturar</button>
@@ -68,15 +70,15 @@
             </div>
         </div>
     </div>
-<script>
-    document.getElementById('comenzarGifo').onclick = function (){
-        document.querySelector('.crearGifos').style.display = 'none';
-        document.querySelector('.misGifos').style.display = 'none';
-        document.querySelector('.misGifosBox').style.display = 'none';
-        
-        document.querySelector('.videoParent').style.display = 'grid';
-    }
-</script>
+    <script>
+        document.getElementById('comenzarGifo').onclick = function (){
+            document.querySelector('.crearGifos').style.display = 'none';
+            document.querySelector('.misGifos').style.display = 'none';
+            document.querySelector('.misGifosBox').style.display = 'none';
+            
+            document.querySelector('.videoParent').style.display = 'grid';
+        }
+    </script>
     <script src="./Scripts/uploadVideo.js"></script>
 </body>
 </html>
