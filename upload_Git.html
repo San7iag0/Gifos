@@ -6,7 +6,7 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Css/upload.css">
-    <link rel="stylesheet" href="./upload_Git.js">
+    
 </head>
 <body>
     <div class="grid">	
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="content">
-            <div>
+            <div class="crearGifos">
                 <div class="boxheader">
                     Crear Guifos
                 </div>
@@ -43,13 +43,21 @@
                                                 
                         <a href="./index.html" class='cancelarGifo'>Cancelar</a>
                         
-                        <button onclick="comenzarGifo()" class="comenzarGifo">
+                        <button id="comenzarGifo" class="comenzarGifo">
                             Comenzar
                         </button>
                     </div>
                 </div>
                 
             </div> 
+			<div class="videoParent">
+                <div class="titleV">Un Chequeo Antes de Empezar</div>
+                <div class="videoBox"></div>
+                <div class="capturar" >
+                    <div class="camera"></div>
+                    <button id="capturar" class="capturarBox">Capturar</button>
+    	        </div>
+            </div>
         </div>
         <div class="misGifos">
             <div class="sugerencias"> 
@@ -60,5 +68,15 @@
             </div>
         </div>
     </div>
+<script>
+    document.getElementById('comenzarGifo').onclick = function (){
+        document.querySelector('.crearGifos').style.display = 'none';
+        document.querySelector('.misGifos').style.display = 'none';
+        document.querySelector('.misGifosBox').style.display = 'none';
+        
+        document.querySelector('.videoParent').style.display = 'grid';
+    }
+</script>
+    <script src="./Scripts/uploadVideo.js"></script>
 </body>
 </html>
