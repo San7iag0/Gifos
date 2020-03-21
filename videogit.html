@@ -4,15 +4,29 @@
     <title>Camera</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     
 </head>
 <body>
+
+    <button onclick="grabar()">grabar </button>
+    <button onclick="stopRecording()">Stop Recording</button>
+    <br>
     <video id="video" autoplay>Video scteam not available</video>
+    <video id="video2"></video>
 
     <script>
         const video = document.getElementById('video');
 
-function startup(){
+function grabar(){
+
+    let constraintObj = {
+        audio: false,
+        video: {
+            width: {max:480},
+            height: {max: 480}
+        }
+    }
     navigator.mediaDevices.getUserMedia({
         audio: false, 
         video: true
@@ -21,7 +35,24 @@ function startup(){
     }).catch(console.error);
 }
 
+
+
 window.addEventListener('load', startup, false); 
+
+
+
+recorder = RecordRTC(stream, {
+  type: 'gif',
+  frameRate: 1,
+  quality: 10,
+  width: 360,
+  hidden: 240,
+  
+  onGifRecordingStarted: function() {
+   console.log('started')
+ },
+});
+
     </script>
 </body>
 </html>
