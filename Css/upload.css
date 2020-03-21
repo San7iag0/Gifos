@@ -161,9 +161,7 @@ body{
     /* box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #ffffff; */
     background:#E6E6E6;   
  }
-.crearGifos{
-	
-}
+
 
 /*******************************************/
 .titleV{
@@ -204,12 +202,10 @@ body{
 
 .camera{
   position: relative;
-/*   height: 1px; */
 }
 .camera::before {
   content: url(./../images/camera.svg);
   position: absolute;
-/*   top: -35.5px; */
   right: 0.4px; 
   width: 36px;
   height: 34px;
@@ -222,7 +218,7 @@ body{
   color: black;
 }
 
-.capturarBox{
+.btncapturar{
 	width:144px;
 	height:36px;
 	margin-right:14px;
@@ -240,9 +236,35 @@ body{
 	
 }
 
-.pppbox{
-	height:30px;
-	width:30px;
-	background:gray;
+.recording{
+    position: relative;
+    
 }
+.recording::before{
+    content: url(./../Images/recording.svg);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    right: -1px;
+    height: 34px;
+    width: 36px;
+
+    background: #FF6161;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+
+}
+
+.btnlisto{
+    
+    width: 144px;
+    height: 36px;
+
+    background: #FF6161;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+}
+
 
