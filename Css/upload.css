@@ -204,18 +204,22 @@ body{
   position: relative;
 }
 .camera::before {
-  content: url(./../images/camera.svg);
-  position: absolute;
-  right: 0.4px; 
-  width: 36px;
-  height: 34px;
-  background: #f7c9f3;
-  border: 1px solid #110038;
-  box-shadow:inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  line-height: 25px;
-  color: black;
+    content: url(./../images/camera.svg);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    right: 0.4px; 
+    width: 36px;
+    height: 34px;
+    background: #f7c9f3;
+    border: 1px solid #110038;
+    box-shadow:inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    line-height: 25px;
+    color: black;
 }
 
 .btncapturar{
@@ -261,10 +265,18 @@ body{
     
     width: 144px;
     height: 36px;
+    margin-right: 14px;
 
     background: #FF6161;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+
+    font-family: ChakraPetch-Regular;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
 }
 
 
