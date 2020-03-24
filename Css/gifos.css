@@ -126,7 +126,9 @@ body{
    border: 1px solid #979797;
    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
 }
-.searchChil button{
+#searchGifbtn{
+   content: url(./../Images/lupa.svg);
+
    font-family: ChakraPetch-Regular;
    font-size: 16px;
    color: #B4B4B4;
@@ -142,8 +144,8 @@ body{
    
 }
 
-.HistoryBox{
-   grid-area: HistoryBox;
+.historyBox{
+   grid-area: historyBox;
 }
 /* barra Hoy te sugerimos  */
 .sugerencias{
@@ -255,14 +257,14 @@ body{
    .grid{
 display: grid;
       grid-template-columns: 122px 600px 600px 122px;
-      grid-template-rows:70px 145px 100px auto 510px auto 280px;
+      grid-template-rows:70px 145px 100px auto auto 510px 280px;
       grid-template-areas:
          "title title title title"
          ". header header ."
          ". search search ."
-         ". HistoryBox HistoryBox ."
-         ". content_sugerencias content_sugerencias ."
+         ". historyBox historyBox ."
          ". searchGIts searchGIts  ."
+         ". content_sugerencias content_sugerencias ."
          ". content content .";
    }
 

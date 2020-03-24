@@ -166,9 +166,24 @@ function historySearch(){
 	// crea el boton 
 		var newButton = document.createElement("BUTTON");  
 	//da nombre al nuevo boton 
+	//cambiar parte para evitar que todos los botones tengan el mismo id 
 		newButton.setAttribute("id", "button1");
 		newButton.innerHTML = "#" + textInp;
 	//inprime el nuevo boton 
 		newButton.setAttribute("class", "sugbuttons")
-		document.getElementById("sugerencias").appendChild(newButton);
+		document.getElementById("historyBox").appendChild(newButton);
 	}
+
+
+///////////////////////////////////////////
+
+document.getElementById('inputSearch').addEventListener('keypress', paintButton);
+
+function paintButton(){
+	document.getElementById('searchGifbtn').style.background = '#F7C9F3';
+	document.getElementById('searchGifbtn').style.color = ' #110038';
+}
+
+
+
+

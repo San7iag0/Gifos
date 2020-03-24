@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Holiiii</title>
     
     
     <link rel="stylesheet" href="Css/gifos.css">
@@ -39,10 +39,13 @@
             <div class="buscar" id="title">Buscar</div>
             <div class="searchChil">
                 <input type="text" id="inputSearch" placeholder="Busca Gifs, hashtags, temas, busca lo que quieras...">
-                <button onclick="searchGif()"><img src="./Images/Combined Shape.svg" alt=""> Buscar</button>
+                <button onclick="searchGif()" id="searchGifbtn"><img src="./Images/Combined Shape.svg" alt=""> Buscar</button>
             </div>
         </div> 
-        <div class="HistoryBox"></div>  
+        <div class="historyBox" id="historyBox"></div>  
+        <div class="searchGIts">
+            <div id="dynamicGifts"></div>
+        </div>
         <div class="content_sugerencias">
             <div class="sugerencias"> 
                 <p>Hoy te sugerimos</p>
@@ -83,9 +86,7 @@
             </div>
              
         </div>
-        <div class="searchGIts">
-            <div id="dynamicGifts"></div>
-        </div>
+        
         <div class="content" id="content"></div>   
     </div>
     
