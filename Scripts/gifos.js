@@ -92,8 +92,6 @@ function test() {
 	}
 }
 
-//functions gids 
-
 
 // function onload width ramdom gits 
 window.onload = () => {
@@ -105,10 +103,6 @@ window.onload = () => {
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= broly &api_key=' + apiKey + "&limit=2", 'advice3');
 }
 
-
-function crearGifos(){
-	a
-}
 
 // original funtion with the URL and Json 
 function createBoxesWithGifts(url, contentId) {
@@ -174,9 +168,6 @@ function historySearch(){
 		document.getElementById("historyBox").appendChild(newButton);
 	}
 
-
-///////////////////////////////////////////
-
 document.getElementById('inputSearch').addEventListener('keypress', paintButton);
 
 function paintButton(){
@@ -185,5 +176,11 @@ function paintButton(){
 }
 
 
+////////////////////////////////////////////////////////////////
 
+function newBoxAdvice(){
+	var newDiv = document.createElement('div');
+	newDiv.setAttribute('id', '')
+}
 
+////creado nuevo div para sugerencias 
