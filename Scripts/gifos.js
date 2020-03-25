@@ -180,7 +180,9 @@ function paintButton(){
 
 function newBoxAdvice(){
 	var newDiv = document.createElement('div');
-	newDiv.setAttribute('id', '')
+	newDiv.setAttribute('id', 'adviceNewBoxes');
+	var p = document.createElement('p');
+	document.getElementById('adviceNewBoxes').appendChild('p');
 }
 
 ////creado nuevo div para sugerencias 
