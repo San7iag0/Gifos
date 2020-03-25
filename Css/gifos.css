@@ -428,7 +428,7 @@ font-size: 14px;
 color: #110038;
 letter-spacing: 0;
 
-display: grid;
+display: none;
 grid-column: 1/5;
 align-items: center;
 height: 32px;
