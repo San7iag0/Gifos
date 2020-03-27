@@ -20,6 +20,7 @@ function light() {
 	let dropdownDayStyle = document.getElementsByClassName('dropdownContentDark');
 	let sailorDaybutton = document.getElementsByClassName('sailorDbuttonDark'); 
 	let sailorNbuttonDayStyle = document.getElementsByClassName('sailorNbuttonDark');
+	let searchDayStayle = document.getElementsByClassName('searchDark')
 
 		for (let i = 0; i < titleDayStyle.length; i++){
 			titleDayStyle[i].classList.replace('titleDark', 'title');
@@ -42,9 +43,13 @@ function light() {
 		for(let i = 0; i < sailorNbuttonDayStyle.length; i++){
 			sailorNbuttonDayStyle[i].classList.replace('sailorNbuttonDark', 'sailorNbutton');
 		}
+		for(let i = 0; i < searchDayStayle.length; i++){
+			searchDayStayle[i].classList.replace('searchDark', 'search');
+	
+		}
 }
 /**
- * change style by DOM JS to Dark
+ * change style to Dark
  */ 
 function dark(){
 	document.body.style.backgroundColor = '#110038';
@@ -57,6 +62,7 @@ function dark(){
 	let dropdownDarkStyle = document.getElementsByClassName('dropdownContent');
 	let sailorDbuttonDarkStyle = document.getElementsByClassName('sailorDbutton');
 	let sailorNbuttonDarkStyle = document.getElementsByClassName('sailorNbutton');
+	let searchDarkStyle = document.getElementsByClassName('search');
 	
 		for (let i = 0; i < titleDarkStyle.length; i++){
 			titleDarkStyle[i].classList.replace('title', 'titleDark');
@@ -82,6 +88,9 @@ function dark(){
 		for (let i = 0; i < sailorNbuttonDarkStyle.length; i++){
 			sailorNbuttonDarkStyle[i].classList.replace('sailorNbutton', 'sailorNbuttonDark');
 		}
+		for(let i = 0; i < searchDarkStyle.length; i++){
+			searchDarkStyle[i].classList.replace('search', 'searchDark');
+		}
 }
 
 function test() {
@@ -104,7 +113,7 @@ window.onload = () => {
 }
 
 
-// original funtion with the URL and Json 
+
 function createBoxesWithGifts(url, contentId) {
 	fetch(url)
 		.then(response => {

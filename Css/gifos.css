@@ -84,6 +84,13 @@ body{
    width: 1200px;
    height: 99px; 
 }
+
+.searchDark{
+   grid-area: search;
+   background: #B4B4B4;
+   width: 1200px;
+   height: 99px; 
+}
 .buscar{
    color: #FFFFFF;
    display: flex;
@@ -253,22 +260,20 @@ body{
    grid-gap: 10px;
 }
 
-@media screen and (min-width: 736px){ 
-   .grid{
-display: grid;
-      grid-template-columns: 122px 600px 600px 122px;
-      grid-template-rows:70px 145px 100px auto auto 510px 280px;
-      grid-template-areas:
-         "title title title title"
-         ". header header ."
-         ". search search ."
-         ". historyBox historyBox ."
-         ". searchGIts searchGIts  ."
-         ". content_sugerencias content_sugerencias ."
-         ". content content .";
-   }
-
+.grid{
+   display: grid;
+   grid-template-columns: 122px 600px 600px 122px;
+   grid-template-rows:70px 145px 100px auto auto 510px 280px;
+   grid-template-areas:
+      "title title title title"
+      ". header header ."
+      ". search search ."
+      ". historyBox historyBox ."
+      ". searchGIts searchGIts  ."
+      ". content_sugerencias content_sugerencias ."
+      ". content content .";
 }
+
 .buttonDropD{
 	display: flex;
    width: 330px;
@@ -443,14 +448,23 @@ margin: 30px 0 30px 0;
 /* ********************************** */
 #despMenu1{
    display:none;
-  align-content:center;
-  z-index: 20;
+   align-content:center;
 
-  width:1200px;
-  height:160px;
-  
-  background: #E6E6E6;
-  box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #FFFFFF;
+   width:1200px;
+   height:160px;
+
+   background: #E6E6E6;
+   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #FFFFFF;
+}
+#despMenu1Dark{
+   align-content:center;
+
+   width:1200px;
+   height:160px;
+
+   background: #E6E6E6;
+   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #FFFFFF;
+
 }
 .sugessText{
   width:1055px;
