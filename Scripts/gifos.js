@@ -186,3 +186,11 @@ function adviceNewBoxes(){
 	document.getElementById("adviceNewBoxes").style.display = "grid";
 }
 
+////Menu de sugerencias 
+document.getElementById('inputSearch').addEventListener("keypress", sight);
+
+function sight(){
+			document.getElementById('despMenu1').style.display = 'grid';	
+}
+
+

@@ -440,3 +440,32 @@ box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80887D;
 padding:0 0 0 5px;
 margin: 30px 0 30px 0;
 }
+/* ********************************** */
+#despMenu1{
+   display:none;
+  align-content:center;
+  z-index: 20;
+
+  width:1200px;
+  height:160px;
+  
+  background: #E6E6E6;
+  box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #FFFFFF;
+}
+.sugessText{
+  width:1055px;
+  height:34px;
+  border:1px solid #808080;
+  box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+  margin: 5px 0 5px 15px;
+  
+  background:#F0F0F0;
+  
+  color:#110038;
+}
+
+
+
+
+
+
