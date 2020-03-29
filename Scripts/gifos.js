@@ -106,12 +106,12 @@ function test() {
 window.onload = () => {
 	// let contenedor = document.getElementById("content");
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= dog &api_key=' + apiKey, "content");
+	
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= cats &api_key=' + apiKey + "&limit=2", 'advice');
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= vegeta &api_key=' + apiKey + "&limit=2", 'advice1');
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= goku &api_key=' + apiKey + "&limit=2", 'advice2');
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= broly &api_key=' + apiKey + "&limit=2", 'advice3');
 }
-
 
 
 function createBoxesWithGifts(url, contentId) {
@@ -152,12 +152,8 @@ function searchGif() {
 	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q=${searchText}&api_key=` + apiKey, "dynamicGifts");
 
 	changeText();
-
 	adviceNewBoxes();
-
 	historySearch(); 
-
-
 }
 
 function changeText(){
@@ -165,20 +161,19 @@ function changeText(){
 	document.getElementById("sugText").innerHTML = x;
 }
 
-
 function historySearch(){ 
 	//toma el valor de input
-		let textInp = document.getElementById("inputSearch").value;
+	let textInp = document.getElementById("inputSearch").value;
 	// crea el boton 
-		var newButton = document.createElement("BUTTON");  
+	var newButton = document.createElement("BUTTON");  
 	//da nombre al nuevo boton 
 	//cambiar parte para evitar que todos los botones tengan el mismo id 
-		newButton.setAttribute("id", "button1");
-		newButton.innerHTML = "#" + textInp;
+	newButton.setAttribute("id", "button1");
+	newButton.innerHTML = "#" + textInp;
 	//inprime el nuevo boton 
-		newButton.setAttribute("class", "sugbuttons")
-		document.getElementById("historyBox").appendChild(newButton);
-	}
+	newButton.setAttribute("class", "sugbuttons")
+	document.getElementById("historyBox").appendChild(newButton);
+}
 
 document.getElementById('inputSearch').addEventListener('keypress', paintButton);
 
@@ -187,19 +182,17 @@ function paintButton(){
 	document.getElementById('searchGifbtn').style.color = ' #110038';
 }
 
-
-
 ////creado nuevo div para sugerencias 
 
 function adviceNewBoxes(){
 	document.getElementById("adviceNewBoxes").style.display = "grid";
 }
 
-////Menu de sugerencias 
+////Menu de Autocompletar 
 document.getElementById('inputSearch').addEventListener("keypress", sight);
 
 function sight(){
-			document.getElementById('despMenu1').style.display = 'grid';	
+	document.getElementById('despMenu1').style.display = 'grid';	
 }
 
 
