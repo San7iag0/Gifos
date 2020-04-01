@@ -212,7 +212,7 @@ body{
    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 .box:hover{
-   
+	border:  1px dashed #110038;
 }
 
 
