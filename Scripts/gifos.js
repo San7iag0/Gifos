@@ -111,6 +111,8 @@ window.onload = () => {
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= vegeta &api_key=' + apiKey + "&limit=2", 'advice1');
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= goku &api_key=' + apiKey + "&limit=2", 'advice2');
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= broly &api_key=' + apiKey + "&limit=2", 'advice3');
+
+	
 }
 
 
