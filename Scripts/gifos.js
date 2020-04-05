@@ -101,7 +101,6 @@ function test() {
 	}
 }
 
-
 // function onload width ramdom gits 
 window.onload = () => {
 	// let contenedor = document.getElementById("content");
@@ -111,10 +110,7 @@ window.onload = () => {
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= vegeta &api_key=' + apiKey + "&limit=2", 'advice1');
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= goku &api_key=' + apiKey + "&limit=2", 'advice2');
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= broly &api_key=' + apiKey + "&limit=2", 'advice3');
-
-
 }
-
 
 function createBoxesWithGifts(url, contentId) {
 	fetch(url)
@@ -122,11 +118,13 @@ function createBoxesWithGifts(url, contentId) {
 			return response.json();
 		})
 		.then(dataList => {
-			for(var i = 0; i < dataList.length; i++){
-			let text = document.getElementById('textadvice').innerHTML = dataList.data[i].title;
+			
+			printGiftBoxes(dataList.data, contentId);
+			for(var i = 0; i < 4; i++){
+			let text = document.getElementById('textadvice').innerHTML = '#' +
+			dataList.data[i].title;
 			console.log(text);
 			}
-			printGiftBoxes(dataList.data, contentId);
 		return data;
 		})
 		.catch(error => {
@@ -140,10 +138,13 @@ function printGiftBoxes(listGift, contentId) {
 
 	let contenedor = document.getElementById(contentId);
 	for (let i = 0; i < listGift.length -1; i++) {
+
 		let div = document.createElement("img");
+
 		div.className = "box"; 
 		div.setAttribute("src",listGift[i].images.original.webp);
 		contenedor.appendChild(div);
+
 	}
 }
 
