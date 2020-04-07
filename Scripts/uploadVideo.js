@@ -19,6 +19,7 @@ function capturar(){
 	document.querySelector('.camera').style.display = 'none';
 	document.querySelector('.recording').style.display = 'grid';
 
+	document.querySelector('.titleV').innerHTML = 'Capturando Tu Guifo';
 	navigator.mediaDevices.getUserMedia({
 			audio:false,
 			video:{
@@ -29,5 +30,10 @@ function capturar(){
 			video.srcObject = stream;
 			video.play()
 		}).catch(console.error);
+}
+
+function stopRecording(){
+	document.querySelector('.titleV').innerHTML = 'Vista previa';
+	
 }
 	
