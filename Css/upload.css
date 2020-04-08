@@ -113,7 +113,7 @@ body{
     text-align: center;
 
 }
-.comenzarGifo{
+#comenzarGifo{
     height: 36px;
     width: 144px;
     margin:0 20px 0 5px;
@@ -222,7 +222,7 @@ body{
     color: black;
 }
 
-.btncapturar{
+#btncapturar{
 	width:144px;
 	height:36px;
 	margin-right:14px;
