@@ -222,7 +222,7 @@ body{
     color: black;
 }
 
-#btncapturar{
+#btnStart{
 	width:144px;
 	height:36px;
 	margin-right:14px;
@@ -261,7 +261,7 @@ body{
 
 }
 
-.btnlisto{
+.btnStop{
     
     width: 144px;
     height: 36px;
