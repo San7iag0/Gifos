@@ -12,9 +12,8 @@ function comenzarGifo(){
 	document.querySelector('.recording').style.display = 'none';
 	
 	document.querySelector('.videoParent').style.display = 'grid';
-
-	
 }
+
 function capturar(){
 	document.querySelector('.btnStop').style.display = 'grid';
 	document.querySelector('#btnStart').style.display = 'none';
@@ -47,11 +46,16 @@ function captureCamera(callback) {
             video: true,
             Audio: false
         }).then(function(camera) {
-        callback(camera);
-    }).catch(function(error) {
-        alert('Unable to capture.');
-        console.error(error);
-    });
+		callback(camera);
+		//image.srcObject = camera;
+		//image.onplay();
+
+	}).catch(console.error);
+	
+	// .catch(function(error) {
+    //     alert('Unable to capture.');
+    //     console.error(error);
+    // });
 }
 
 var recorder; 
