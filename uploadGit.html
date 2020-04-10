@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>document</title>
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Css/upload.css">
     
@@ -42,10 +42,7 @@
                     <div class="contentButtons">
                                                 
                         <a href="./index.html" class='cancelarGifo'>Cancelar</a>
-                        
-                        <button id="comenzarGifo">
-                            Comenzar
-                        </button>
+                        <button id="comenzarGifo">Comenzar</button>
                     </div>
                 </div>
                 
@@ -53,16 +50,15 @@
 			<div class="videoParent">
                 <div class="titleV">Un Chequeo Antes de Empezar</div>
                 <div class="videoBox">
-                    <!-- <img id="video" alt=""> -->
-                    <video id="video" autoplay>Video scteam not available</video>
+                    <img id= "videoimg" alt="">
+                    <img id= "videoimg1" alt="">
+                    <!-- <video id="video" autoplay>Video scteam not available</video> -->
                 </div>
                 <div class="capturar" >
-                    <div class="camera">
-                        <!-- <img alt="Image to play de gif"> -->
-                    </div>
+                    <div class="camera"></div>
                     <button id ="btnStart">Capturar</button>
                     <div class="recording"></div>
-                    <button class="btnStop">Listo</button>
+                    <button class="btnStop" disabled="disabled">Listo</button>
     	        </div>
             </div>
         </div>
@@ -75,6 +71,13 @@
             </div>
         </div>
     </div>
-    <script src="./Scripts/uploadVideo.js"></script>
+    
+    <!-- RecordRTC library -->
+    <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+
+    <script src="./Scripts/uploadVideo.js">
+    
+    </script>
 </body>
 </html>
