@@ -44,14 +44,15 @@ document.querySelector('.btnStop').onclick = function (){
 function captureCamera(callback) {
     navigator.mediaDevices.getUserMedia({ 
             video: true,
-            Audio: false
         }).then(function(camera) {
 		callback(camera);
 		//image.srcObject = camera;
 		//image.onplay();
 
 	}).catch(console.error);
-	
+        
+    //console.log('unable to capture');
+    
 	// .catch(function(error) {
     //     alert('Unable to capture.');
     //     console.error(error);
@@ -64,8 +65,8 @@ function recordingGif() {
     captureCamera(function(camera) {
         recorder = RecordRTC(camera, {
             type: 'gif',
-            // frameRate: 1,
-            // quality: 10,
+            frameRate: 1,
+            quality: 10,
             width: 360,
 			hidden: 240,
 			
