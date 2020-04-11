@@ -49,8 +49,8 @@ function captureCamera(callback) {
 		//image.srcObject = camera;
 		//image.onplay();
 
-	}).catch(console.error);
-        
+    }).catch(console.error);
+            
     //console.log('unable to capture');
     
 	// .catch(function(error) {
