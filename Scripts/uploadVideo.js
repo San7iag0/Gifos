@@ -1,5 +1,5 @@
 var recorder;
-var image = document.querySelector('#videoimg');
+const image = document.querySelector('#videoimg');
 //const video = document.getElementById('video');
 
 // functions to change stiles 
@@ -43,11 +43,11 @@ document.querySelector('.btnStop').onclick = function (){
 
 function captureCamera(callback) {
     navigator.mediaDevices.getUserMedia({ 
-            video: true,
+            video: true
         }).then(function(camera) {
 		callback(camera);
-		//image.srcObject = camera;
-		//image.onplay();
+		image.srcObject = camera;
+		image.onplay();
 
     }).catch(console.error);
             
