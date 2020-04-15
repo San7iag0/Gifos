@@ -120,7 +120,8 @@ function createBoxesWithGifts(url, contentId) {
 		.then(dataList => {
 			
 			printGiftBoxes(dataList.data, contentId);
-			for(var i = 0; i < 4; i++){
+			// change to 4 on the lenght to pring the headers 
+			for(var i = 0; i < dataList.length; i++){
 			let text = document.getElementById('textadvice').innerHTML = '#' +
 			dataList.data[i].title;
 			console.log(text);
