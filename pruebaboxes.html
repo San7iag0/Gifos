@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perro</title>
+    <style>
+        .box{
+            display:grid;
+            width: 280px;
+            height: 280px;
+            background:#E6E6E6; 
+            margin-bottom: 20px;   
+            box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+        }
+        title{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<button id="gato">gato</button>    
+<div id="content"></div>
+
+<script>
+        let container = document.getElementById('content');
+        document.getElementById('gato').onclick = function (){
+            fetch("https://api.giphy.com/v1/gifs/trending?" + "&api_key=" + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW' + '&limit=12')
+                .then((response) => {
+                    return response.json();
+                })
+                .then((JSON) => {
+                    for(var i = 0; i < 12; i++){
+
+                        let box = document.createElement('img');
+                        box.className = 'box';
+                        box.setAttribute('src',JSON.data[i].images.original.webp);
+                        container.appendChild(box);
+
+                        let title= document.createElement('p');
+                        title.innerHTML = JSON.data[i].title;
+                        container.appendChild(title);
+
+                        console.log(JSON.data[i].title);
+                    }
+            });
+    }
+
+
+        //    function createdboxes(listGifs){
+        //     for(var i = 0; i < listGifs.length; i ++){
+        //         let box = document.createElement('img');
+        //         box.className = 'box';
+        //         box.setAttribute("src", listGifs[i].embed_url);
+        //         container.appendChild('box');
+        //     }
+        // }
+        // function gifRandom(){
+        //     fetch("https://api.giphy.com/v1/gifs/random?" + "&api_key=" + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW')
+        //         .then((response) => {
+        //             return response.json();
+        //         }).then((JSON) => {
+        //             createdboxes(json.data, )
+        //                 console.log(JSON);
+        //         });
+        // }
+
+
+
+    </script>
+</body>
+</html>
