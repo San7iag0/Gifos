@@ -1,0 +1,23 @@
+.box{
+    /* display:grid; */
+    width: 280px;
+    height: 280px;
+    background:#E6E6E6; 
+    margin-bottom: 20px;   
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+.title{
+    /* visibility: hidden; */
+    /* grid-area: title; */
+    font-family: ChakraPetch-Regular;
+    font-size: 15px;
+    height: 23px;
+    width: 280px;
+    background-image: linear-gradient(to right, #4180F6, #F7C9F3);
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+.papa{
+    height: 280px;
+    width: 280px;
+}
