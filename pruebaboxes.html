@@ -33,18 +33,18 @@
                         let father = document.createElement('div');
                         father.className = 'papa';
                         container.appendChild(father);
-
-                        let div = document.createElement('div');
-                        div.className = 'title';
-                        father.appendChild(div);
-
+                      
                         let box = document.createElement('img');
                         box.className = 'box';
                         box.setAttribute('src',JSON.data[i].images.original.webp);
                         father.appendChild(box);
 
+                        let div = document.createElement('div');
+                        div.className = 'title';
+                        father.appendChild(div);
+
                         let titleG = document.createElement('p');
-                        titleG.innerHTML = JSON.data[i].title;
+                        titleG.innerHTML = '#' + JSON.data[i].title;
                         div.appendChild(titleG);
                     
                     }
