@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>perro</title>
+    <title>test</title>
     <link rel="stylesheet" href="pruebaboxes.css" id="cssFile">
 
     
 </head>
 <body>
 
-<button id="normal">normal</button>
+<!-- <button id="normal">normal</button>
+<button id="dark">dark</button> -->
 
-<button id="dark">dark</button>
-<!-- <p class="title"> hola amigos</p> -->
 <button id="gato">gato</button>    
 <div id="content">
-    <!-- <div class="title"></div> -->
 </div>
 
     <script>
@@ -40,13 +38,13 @@
                         father.appendChild(box);
 
                         let div = document.createElement('div');
-                        div.className = 'title';
+                        div.className = 'titlehov';
                         father.appendChild(div);
 
                         let titleG = document.createElement('p');
                         titleG.innerHTML = '#' + JSON.data[i].title;
                         div.appendChild(titleG);
-                    
+
                     }
             });
         }

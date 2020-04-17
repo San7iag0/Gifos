@@ -260,7 +260,7 @@ body{
    grid-area:content_sugerencias;
 }
 
-.content{
+#content{
    grid-area: content;
    display: grid;
    grid-template-columns: repeat(4, 1fr);
@@ -389,7 +389,7 @@ body{
 .arrow::before {
   content: url(./../images/dropdown.svg);
   position: absolute;
-  top: -35.5px;
+  top: -36.5px;
   right: -37px;
   width: 36px;
   height: 34px;
