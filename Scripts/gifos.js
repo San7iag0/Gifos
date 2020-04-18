@@ -104,12 +104,44 @@ function test() {
 // function onload width ramdom gits 
 window.onload = () => {
 	// let contenedor = document.getElementById("content");
-	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= dog &api_key=' + apiKey, "content");
+	printTendencyGifs();
+	// createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= dog &api_key=' + apiKey, "content");
 	
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= fiercedom honey &api_key=' + apiKey + "&limit=2", 'advice');
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= vegeta &api_key=' + apiKey + "&limit=2", 'advice1');
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= goku &api_key=' + apiKey + "&limit=2", 'advice2');
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= broly &api_key=' + apiKey + "&limit=2", 'advice3');
+}
+
+	let container = document.getElementById('content');	
+function printTendencyGifs(){
+	
+	fetch("https://api.giphy.com/v1/gifs/trending?" + "&api_key=" + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW' + '&limit=12')
+	.then((response) => {
+		return response.json();
+	})
+	.then((JSON) => {   
+		for(var i = 0; i < 12; i++){
+
+			let father = document.createElement('div');
+			father.className = 'papa';
+			container.appendChild(father);
+		  
+			let box = document.createElement('img');
+			box.className = 'box';
+			box.setAttribute('src',JSON.data[i].images.original.webp);
+			father.appendChild(box);
+
+			let div = document.createElement('div');
+			div.className = 'titlehov';
+			father.appendChild(div);
+
+			let titleG = document.createElement('p');
+			titleG.innerHTML = '#' + JSON.data[i].title;
+			div.appendChild(titleG);
+
+		}
+	});
 }
 
 function createBoxesWithGifts(url, contentId) {
@@ -183,6 +215,7 @@ function historySearch(){
 	document.getElementById("historyBox").appendChild(newButton);
 }
 
+// evento para texto de sugerencias y autollenado 
 document.getElementById('inputSearch').addEventListener('keypress', paintButton);
 
 function paintButton(){
@@ -202,5 +235,3 @@ document.getElementById('inputSearch').addEventListener("keypress", sight);
 function sight(){
 	document.getElementById('despMenu1').style.display = 'grid';	
 }
-
-

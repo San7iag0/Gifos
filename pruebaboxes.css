@@ -29,10 +29,10 @@
     transition: 2s;
 
 }
-/* .papa{
+.papa{
     display: grid;
     grid-template-rows: 1fr 1fr;
     height: 280px;
     width: 280px;
     padding: 20px;
-} */
+}
