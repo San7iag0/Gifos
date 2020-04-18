@@ -48,9 +48,7 @@ function light() {
 	
 		}
 }
-/**
- * change style to Dark
- */ 
+//change style to dark 
 function dark(){
 	document.body.style.backgroundColor = '#110038';
 
@@ -92,7 +90,7 @@ function dark(){
 			searchDarkStyle[i].classList.replace('search', 'searchDark');
 		}
 }
-
+/*
 function test() {
 	let buttonHeaderDarkStyle = document.getElementsByClassName('buttonsHeader');
 
@@ -100,10 +98,11 @@ function test() {
 		buttonHeaderDarkStyle[i].classList.replace('buttonsHeader','buttonsHeaderDark');
 	}
 }
+*/
+
 
 // function onload width ramdom gits 
 window.onload = () => {
-	// let contenedor = document.getElementById("content");
 	printTendencyGifs();
 	// createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= dog &api_key=' + apiKey, "content");
 	
@@ -113,7 +112,8 @@ window.onload = () => {
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= broly &api_key=' + apiKey + "&limit=2", 'advice3');
 }
 
-	let container = document.getElementById('content');	
+// funtion for tnedency gifs and hover title
+let container = document.getElementById('content');	
 function printTendencyGifs(){
 	
 	fetch("https://api.giphy.com/v1/gifs/trending?" + "&api_key=" + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW' + '&limit=12')
@@ -189,11 +189,39 @@ function removeOldBoxes(parentClass) {
 // function to look up the gits from the search input 
 function searchGif() {
 	let searchText = document.getElementById("inputSearch").value;
-	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q=${searchText}&api_key=` + apiKey, "dynamicGifts");
+	let container = document.getElementById('dynamicGifts');
+
+	fetch(`http://api.giphy.com/v1/gifs/search?q=${searchText}&api_key=` + apiKey)
+		.then((response) => {
+		return response.json();
+	})
+	.then((JSON) => {   
+		for(var i = 0; i < 12; i++){
+
+			let father = document.createElement('div');
+			father.className = 'papa';
+			container.appendChild(father);
+		  
+			let box = document.createElement('img');
+			box.className = 'box';
+			box.setAttribute('src',JSON.data[i].images.original.webp);
+			father.appendChild(box);
+
+			let div = document.createElement('div');
+			div.className = 'titlehov';
+			father.appendChild(div);
+
+			let titleG = document.createElement('p');
+			titleG.innerHTML = '#' + JSON.data[i].title;
+			div.appendChild(titleG);
+
+		}
+	});
 
 	changeText();
 	adviceNewBoxes();
 	historySearch(); 
+
 }
 
 function changeText(){
@@ -202,12 +230,12 @@ function changeText(){
 }
 
 function historySearch(){ 
-	//toma el valor de input
+	//take the input value 
 	let textInp = document.getElementById("inputSearch").value;
-	// crea el boton 
+	// created new botton 
 	var newButton = document.createElement("BUTTON");  
-	//da nombre al nuevo boton 
-	//cambiar parte para evitar que todos los botones tengan el mismo id 
+	//set id for the new botton  
+	//set new id for botton, ++1  
 	newButton.setAttribute("id", "button1");
 	newButton.innerHTML = "#" + textInp;
 	//inprime el nuevo boton 
@@ -217,14 +245,12 @@ function historySearch(){
 
 // evento para texto de sugerencias y autollenado 
 document.getElementById('inputSearch').addEventListener('keypress', paintButton);
-
 function paintButton(){
 	document.getElementById('searchGifbtn').style.background = '#F7C9F3';
 	document.getElementById('searchGifbtn').style.color = ' #110038';
 }
 
 ////creado nuevo div para sugerencias 
-
 function adviceNewBoxes(){
 	document.getElementById("adviceNewBoxes").style.display = "grid";
 }
