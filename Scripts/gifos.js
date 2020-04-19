@@ -243,11 +243,25 @@ function historySearch(){
 
 // function to auto-complete  
 document.getElementById('inputSearch').addEventListener('keypress', paintButton);
+
 function paintButton(){
 	document.getElementById('searchGifbtn').style.background = '#F7C9F3';
 	document.getElementById('searchGifbtn').style.color = ' #110038';
 
+	let searchValue = document.getElementById('inputSearch').value;
+	fetch(`https://api.giphy.com/v1/tags/related/${searchValue}?api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW`)
+  		.then((response) => {
+    		return response.json();
+  		})
+  		.then((JSON) => {
+			for(var i = 0; i < 3; i++){
+				console.log(JSON.data[i]);
+			}
+   			
+  		});
 
+
+	
 	/*llamar function con las sugerencias de texto por input y imprimir 
 	en los parrafos ya establacidos */
 }
