@@ -103,8 +103,7 @@ function test() {
 // function onload width ramdom gits 
 window.onload = () => {
 	printTendencyGifs();
-	
-	// createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= dog &api_key=' + apiKey, "content");
+
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= fiercedom honey &api_key=' + apiKey + "&limit=2", 'advice');
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= sailor moon peace &api_key=' + apiKey + "&limit=2", 'advice1');
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= queer eye &api_key=' + apiKey + "&limit=2", 'advice2');
@@ -115,11 +114,12 @@ window.onload = () => {
 let container = document.getElementById('content');	
 function printTendencyGifs(){
 	
-	fetch("https://api.giphy.com/v1/gifs/trending?" + "&api_key=" + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW' + '&limit=12')
+	fetch("https://api.giphy.com/v1/gifs/trending?" + "&api_key=" + apiKey + '&limit=12')
 	.then((response) => {
 		return response.json();
 	})
 	.then((JSON) => {   
+
 		for(var i = 0; i < 12; i++){
 
 			let father = document.createElement('div');
@@ -141,7 +141,6 @@ function printTendencyGifs(){
 
 		}
 	});
-	//removeOldBoxes("dynamicGifts");
 }
 
 function createBoxesWithGifts(url, contentId) {
@@ -190,6 +189,7 @@ function searchGif() {
 		return response.json();
 	})
 	.then((JSON) => {   
+		removeOldBoxes("dynamicGifts");
 		for(var i = 0; i < 12; i++){
 
 			let father = document.createElement('div');
@@ -211,12 +211,14 @@ function searchGif() {
 
 		}
 	});
-
+	
 	changeText();
 	adviceNewBoxes();
 	historySearch(); 
 
 	document.getElementById('despMenu1').style.display = 'none';
+
+	removeOldBoxes();
 
 }
 // change the text on the sugestiolns box 
@@ -272,6 +274,7 @@ function btnVerMas(url){
 			return response.json();
 		})
 		.then((JSON) => {   
+			removeOldBoxes("dynamicGifts");
 			for(var i = 0; i < 12; i++){
 
 				let father = document.createElement('div');
@@ -293,7 +296,12 @@ function btnVerMas(url){
 
 			}
 		});
-	//	removeOldBoxes('dynamicGifts');
+	pageScroll()
+}
+
+function pageScroll(){
+	window.scrollBy(0, -window.innerHeight);
+	
 }
 
 ////creado nuevo div para sugerencias 
@@ -301,10 +309,9 @@ function adviceNewBoxes(){
 	document.getElementById("adviceNewBoxes").style.display = "grid";
 }
 
-////Menu de Autocompletar 
+////Autocompletar Menu 
 document.getElementById('inputSearch').addEventListener("keypress", sight);
 function sight(){
 	document.getElementById('despMenu1').style.display = 'grid';	
 }
-
 

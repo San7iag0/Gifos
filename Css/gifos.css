@@ -223,7 +223,6 @@ body{
 
 
 .buttonVerMas{
-  
    font-family: ChakraPetch-Regular;
    font-size: 14px;
    color: #FFFFFF;
@@ -245,9 +244,8 @@ body{
    
 }
 .buttonVerMas:hover{
-   border: 1px solid #110038;
+	border:  1px dashed #110038;
 }
-
 .searchGIts{
    grid-area:searchGIts;
    display: flex;

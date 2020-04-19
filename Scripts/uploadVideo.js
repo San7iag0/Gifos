@@ -44,7 +44,7 @@ document.querySelector('.btnStop').onclick = function (){
 function captureCamera(callback) {
     navigator.mediaDevices.getUserMedia({ 
             video: true
-        }).then(function(camera) {
+        }).then(function(camera)
 		callback(camera);
 		image.srcObject = camera;
 		image.onplay();
