@@ -100,16 +100,15 @@ function test() {
 }
 */
 
-
 // function onload width ramdom gits 
 window.onload = () => {
 	printTendencyGifs();
-	// createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= dog &api_key=' + apiKey, "content");
 	
+	// createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= dog &api_key=' + apiKey, "content");
 	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= fiercedom honey &api_key=' + apiKey + "&limit=2", 'advice');
-	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= vegeta &api_key=' + apiKey + "&limit=2", 'advice1');
-	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= goku &api_key=' + apiKey + "&limit=2", 'advice2');
-	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= broly &api_key=' + apiKey + "&limit=2", 'advice3');
+	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= sailor moon peace &api_key=' + apiKey + "&limit=2", 'advice1');
+	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= queer eye &api_key=' + apiKey + "&limit=2", 'advice2');
+	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= unicorn &api_key=' + apiKey + "&limit=2", 'advice3');
 }
 
 // funtion for tnedency gifs and hover title
@@ -142,6 +141,7 @@ function printTendencyGifs(){
 
 		}
 	});
+	//removeOldBoxes("dynamicGifts");
 }
 
 function createBoxesWithGifts(url, contentId) {
@@ -150,14 +150,8 @@ function createBoxesWithGifts(url, contentId) {
 			return response.json();
 		})
 		.then(dataList => {
-			
 			printGiftBoxes(dataList.data, contentId);
-			// change to 4 on the lenght to pring the headers 
-			for(var i = 0; i < dataList.length; i++){
-			let text = document.getElementById('textadvice').innerHTML = '#' +
-			dataList.data[i].title;
-			console.log(text);
-			}
+			
 		return data;
 		})
 		.catch(error => {
@@ -222,13 +216,15 @@ function searchGif() {
 	adviceNewBoxes();
 	historySearch(); 
 
-}
+	document.getElementById('despMenu1').style.display = 'none';
 
+}
+// change the text on the sugestiolns box 
 function changeText(){
 	var x = document.getElementById("inputSearch").value;
 	document.getElementById("sugText").innerHTML = x;
 }
-
+// ad the new blued boxes with the history 
 function historySearch(){ 
 	//take the input value 
 	let textInp = document.getElementById("inputSearch").value;
@@ -243,11 +239,61 @@ function historySearch(){
 	document.getElementById("historyBox").appendChild(newButton);
 }
 
-// evento para texto de sugerencias y autollenado 
+// function to auto-complete  
 document.getElementById('inputSearch').addEventListener('keypress', paintButton);
 function paintButton(){
 	document.getElementById('searchGifbtn').style.background = '#F7C9F3';
 	document.getElementById('searchGifbtn').style.color = ' #110038';
+
+
+	/*llamar function con las sugerencias de texto por input y imprimir 
+	en los parrafos ya establacidos */
+}
+
+//function VER MAS... buttons 
+document.getElementById('firstbtn').onclick = function (){
+	btnVerMas('https://api.giphy.com/v1/gifs/search?q= Jonathan &api_key=' + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW');
+}
+document.getElementById('secondBtn').onclick = function (){
+	btnVerMas('https://api.giphy.com/v1/gifs/search?q= sailor moon &api_key=' + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW');
+}
+document.getElementById('thirdbtn').onclick = function (){
+	btnVerMas('https://api.giphy.com/v1/gifs/search?q= fab5 &api_key=' + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW');
+}
+document.getElementById('fourthbtn').onclick = function(){
+	btnVerMas('https://api.giphy.com/v1/gifs/search?q= unicorns &api_key=' + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW');
+}
+
+// funtion to print the new boxes with the gifs from the VER MAS Bottons
+function btnVerMas(url){
+	let container = document.getElementById('dynamicGifts');
+	fetch(url)
+		.then((response) => {
+			return response.json();
+		})
+		.then((JSON) => {   
+			for(var i = 0; i < 12; i++){
+
+				let father = document.createElement('div');
+				father.className = 'papa';
+				container.appendChild(father);
+			
+				let box = document.createElement('img');
+				box.className = 'box';
+				box.setAttribute('src',JSON.data[i].images.original.webp);
+				father.appendChild(box);
+
+				let div = document.createElement('div');
+				div.className = 'titlehov';
+				father.appendChild(div);
+
+				let titleG = document.createElement('p');
+				titleG.innerHTML = '#' + JSON.data[i].title;
+				div.appendChild(titleG);
+
+			}
+		});
+	//	removeOldBoxes('dynamicGifts');
 }
 
 ////creado nuevo div para sugerencias 
@@ -257,7 +303,8 @@ function adviceNewBoxes(){
 
 ////Menu de Autocompletar 
 document.getElementById('inputSearch').addEventListener("keypress", sight);
-
 function sight(){
 	document.getElementById('despMenu1').style.display = 'grid';	
 }
+
+
