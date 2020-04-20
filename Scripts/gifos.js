@@ -241,11 +241,18 @@ function historySearch(){
 	document.getElementById("historyBox").appendChild(newButton);
 }
 
+////funtion to show the autocomplete Menu 
+document.getElementById('inputSearch').addEventListener('keypress', paintButton);
+document.getElementById('inputSearch').addEventListener("keypress", sight);
+function sight(){
+	document.getElementById('despMenu1').style.display = 'grid';	
+}
+
 // function to auto-complete  
 function paintButton(){
 	document.getElementById('searchGifbtn').style.background = '#F7C9F3';
 	document.getElementById('searchGifbtn').style.color = ' #110038';
-	let btn1 = document.getElementById('Btn1Search');
+	
 
 	let searchValue = document.getElementById('inputSearch').value;
 	fetch(`https://api.giphy.com/v1/tags/related/${searchValue}?api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW`)
@@ -253,22 +260,27 @@ function paintButton(){
     		return response.json();
   		})
   		.then((JSON) => {
-			for(var i = 0; i < 3; i++){
-				btn1.innerHTML = json.data[i];
-				console.log(JSON.data[i]);
-			}
-   			
-  		});	
-	/*llamar function con las sugerencias de texto por input y imprimir 
-	en los parrafos ya establacidos */
+			let BtnSearch = document.getElementById('BtnSearch');
+			let Btn1Search = document.getElementById('Btn1Search');
+			let Btn2Search = document.getElementById('Btn2Search');
+				BtnSearch.innerHTML = JSON.data[0].name; 
+				Btn1Search.innerHTML = JSON.data[1].name;
+				Btn2Search.innerHTML = JSON.data[2].name;
+
+		  });
 }
-
-
-////funtion to show the autocomplete Menu 
-document.getElementById('inputSearch').addEventListener('keypress', paintButton);
-document.getElementById('inputSearch').addEventListener("keypress", sight);
-function sight(){
-	document.getElementById('despMenu1').style.display = 'grid';	
+ //btn sugestions 
+document.getElementById('BtnSearch').onclick = function (){
+	let sug = document.getElementById('BtnSearch').innerHTML;
+	document.getElementById('inputSearch').value  = sug;
+}
+document.getElementById('Btn1Search').onclick = function (){
+	let sug = document.getElementById('Btn1Search').innerHTML;
+	document.getElementById('inputSearch').value = sug;
+}
+document.getElementById('Btn2Search').onclick = function (){
+	let sug = document.getElementById('Btn2Search').innerHTML; 
+	document.getElementById('inputSearch').value = sug;
 }
 
 //function VER MAS... buttons 
