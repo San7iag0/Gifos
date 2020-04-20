@@ -242,11 +242,10 @@ function historySearch(){
 }
 
 // function to auto-complete  
-document.getElementById('inputSearch').addEventListener('keypress', paintButton);
-
 function paintButton(){
 	document.getElementById('searchGifbtn').style.background = '#F7C9F3';
 	document.getElementById('searchGifbtn').style.color = ' #110038';
+	let btn1 = document.getElementById('Btn1Search');
 
 	let searchValue = document.getElementById('inputSearch').value;
 	fetch(`https://api.giphy.com/v1/tags/related/${searchValue}?api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW`)
@@ -255,15 +254,21 @@ function paintButton(){
   		})
   		.then((JSON) => {
 			for(var i = 0; i < 3; i++){
+				btn1.innerHTML = json.data[i];
 				console.log(JSON.data[i]);
 			}
    			
-  		});
-
-
-	
+  		});	
 	/*llamar function con las sugerencias de texto por input y imprimir 
 	en los parrafos ya establacidos */
+}
+
+
+////funtion to show the autocomplete Menu 
+document.getElementById('inputSearch').addEventListener('keypress', paintButton);
+document.getElementById('inputSearch').addEventListener("keypress", sight);
+function sight(){
+	document.getElementById('despMenu1').style.display = 'grid';	
 }
 
 //function VER MAS... buttons 
@@ -323,9 +328,6 @@ function adviceNewBoxes(){
 	document.getElementById("adviceNewBoxes").style.display = "grid";
 }
 
-////Autocompletar Menu 
-document.getElementById('inputSearch').addEventListener("keypress", sight);
-function sight(){
-	document.getElementById('despMenu1').style.display = 'grid';	
-}
+
+
 
