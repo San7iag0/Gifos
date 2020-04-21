@@ -24,14 +24,14 @@ function capturar(){
 }
 
 // buttons 
-document.querySelector('#comenzarGifo').onclick = function (){
+document.getElementById('comenzarGifo').onclick = function (){
 
 	comenzarGifo(); // cambio de estilos DOM 
 	captureCamera();  // vista previa 
 	
 }
 //btn capturar 
-document.querySelector('#btnStart').onclick = function (){
+document.getElementById('btnStart').onclick = function (){
 	//capturar();
 	recordingGif();
 }
@@ -42,21 +42,12 @@ document.querySelector('.btnStop').onclick = function (){
 }
 
 function captureCamera(callback) {
-    navigator.mediaDevices.getUserMedia({ 
-            video: true
-        }).then(function(camera)
-		callback(camera);
-		image.srcObject = camera;
-		image.onplay();
-
-    }).catch(console.error);
-            
-    //console.log('unable to capture');
-    
-	// .catch(function(error) {
-    //     alert('Unable to capture.');
-    //     console.error(error);
-    // });
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(camera) {
+        callback(camera);
+    }).catch(function(error) {
+        alert('Unable to capture your camera. Please check console logs.');
+        console.error(error);
+    });
 }
 
 var recorder; 
@@ -79,7 +70,7 @@ function recordingGif() {
 		      
         recorder.camera = camera;
 		
-		document.getElementById('btnStop').disabled = false;
+		// document.getElementById('btnStop').disabled = false;
     });
 }
 
