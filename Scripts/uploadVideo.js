@@ -10,7 +10,6 @@ function comenzarGifo(){
 	document.querySelector('.misGifosBox').style.display = 'none';
 	document.querySelector('.btnStop').style.display = 'none';
 	document.querySelector('.recording').style.display = 'none';
-	
 	document.querySelector('.videoParent').style.display = 'grid';
 }
 
@@ -27,12 +26,11 @@ function capturar(){
 document.getElementById('comenzarGifo').onclick = function (){
 
 	comenzarGifo(); // cambio de estilos DOM 
-	captureCamera();  // vista previa 
 	
 }
 //btn capturar 
 document.getElementById('btnStart').onclick = function (){
-	//capturar();
+	capturar();
 	recordingGif();
 }
 //boton listo
@@ -53,29 +51,41 @@ function captureCamera(callback) {
 var recorder; 
 function recordingGif() {
     this.disabled = true;
-    captureCamera(function(camera) {
-        recorder = RecordRTC(camera, {
-            type: 'gif',
-            frameRate: 1,
-            quality: 10,
-            width: 360,
-			hidden: 240,
-			
-            onGifPreview: function(gifURL) {
-                image.src = gifURL;
-            }
-        });
+    captureCamera(cameraCallback);
+}
 
-		recorder.startRecording(); 
-		      
-        recorder.camera = camera;
-		
-		// document.getElementById('btnStop').disabled = false;
+let cameraCallback = function(camera) {
+    recorder = RecordRTC(camera, {
+        type: 'gif',
+        frameRate: 1,
+        quality: 10,
+        width: 360,
+        hidden: 240,
+        
+        onGifPreview: function(gifURL) {
+            image.src = gifURL;
+        }
     });
+
+    recorder.startRecording(); 
+          
+    recorder.camera = camera;
+    
+    document.getElementById('btnStart').display = "none";
 }
 
 function stopRecordingCallback() {
-    image.src = URL.createObjectURL(recorder.getBlob());
+    // the giff URL
+    let giffURL = URL.createObjectURL(recorder.getBlob());
+    // sets the giff url to the video preview
+    image.src = giffURL;
+
+    //local storage
+    // gets the list of giffs from localstorege
+    let giffURLs = localStorage.getItem("keyGiffURL");
+    // adds the giff URL into the localstorage list
+    localStorage.setItem("keyGiffURL", `${giffURLs},${giffURL}`);
+
     recorder.camera.stop();
     recorder.destroy();
     recorder = null;
@@ -83,5 +93,6 @@ function stopRecordingCallback() {
 
 function stopRecording() {
     this.disabled = true;
-	recorder.stopRecording(stopRecordingCallback);	
+    recorder.stopRecording(stopRecordingCallback);	
+    document.querySelector('#btnStart').style.display = 'grid';
 };
