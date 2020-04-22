@@ -1,6 +1,5 @@
 var recorder;
 const image = document.querySelector('#videoimg');
-//const video = document.getElementById('video');
 
 // functions to change stiles 
 //boton comenzar 
@@ -10,7 +9,9 @@ function comenzarGifo(){
 	document.querySelector('.misGifosBox').style.display = 'none';
 	document.querySelector('.btnStop').style.display = 'none';
 	document.querySelector('.recording').style.display = 'none';
-	document.querySelector('.videoParent').style.display = 'grid';
+    document.querySelector('.videoParent').style.display = 'grid';
+    
+    visualizar()
 }
 
 function capturar(){
@@ -33,9 +34,9 @@ document.getElementById('btnStart').onclick = function (){
 	capturar();
 	recordingGif();
 }
-//boton listo
+//btn listo
 document.querySelector('.btnStop').onclick = function (){
-
+    //document.querySelector('#btnStart').style.display = 'grid';
 	stopRecording();
 }
 
@@ -94,5 +95,17 @@ function stopRecordingCallback() {
 function stopRecording() {
     this.disabled = true;
     recorder.stopRecording(stopRecordingCallback);	
-    document.querySelector('#btnStart').style.display = 'grid';
+    //document.querySelector('#btnStart').style.display = 'grid';
 };
+
+/////////////
+function visualizar(){
+	navigator.mediaDevices.getUserMedia({
+		audio:false,
+		video:true
+	}).then(function(stream){
+		image.srcObject = stream;
+		image.play()
+	}).catch(console.error);
+}
+	
