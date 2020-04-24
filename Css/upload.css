@@ -97,7 +97,7 @@ body{
     justify-content: flex-end;
 }
 
-.cancelarGifo{
+.btnCancelar{
     height: 36px;
     width: 144px;
     margin:0 5px 0 5px;

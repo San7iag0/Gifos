@@ -125,3 +125,7 @@ function checkVideo(){
 	}).catch(console.error);
 }
 	
+/* 
+split es un metodo de String
+por lo que localStorage.get("keyGiffURL") en realidad lo que le devuelve es un string
+y split si le retorna una lista */
