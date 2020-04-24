@@ -311,7 +311,7 @@ body{
 	font-size: 16px;
 	color: #110038;
 	letter-spacing: 0;
-	text-align: center;
+	text-align: center; 
     line-height: 18px;	
     margin-right: 20px;
 }
@@ -320,9 +320,11 @@ body{
 #videoimg{
     height: 433px;
     width: 830px;
-
+    position: absolute;
 }
 .video{
     height: 433px;
     width: 830px;
+    position: absolute;
+    object-fit: fill;
 }

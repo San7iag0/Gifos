@@ -1,6 +1,6 @@
 var recorder;
 const image = document.querySelector('#videoimg');
-const video = document.getElementById('video');
+const video = document.querySelector('video');
 
 // functions to change stiles 
 //boton comenzar 
@@ -16,7 +16,8 @@ function comenzarGifo(){
 }
 document.getElementById('comenzarGifo').onclick = function (){
 
-	comenzarGifo(); // cambio de estilos DOM 	
+    comenzarGifo(); // cambio de estilos DOM 
+    checkVideo();
 }
 
 function capturar(){
@@ -30,7 +31,8 @@ function capturar(){
 
 //btn capturar 
 document.getElementById('btnStart').onclick = function (){
-	capturar();
+    capturar();
+
 	recordingGif();
 }
 //boton listo
@@ -112,12 +114,12 @@ function stopRecording() {
     this.disabled = true;
     recorder.stopRecording(stopRecordingCallback);	
 };
-/////////////
-function CheckVideo(){
+
+function checkVideo(){
 	navigator.mediaDevices.getUserMedia({
 		audio:false,
 		video:true
-    }).then(function(stream){
+	}).then(function(stream){
 		video.srcObject = stream;
 		video.play()
 	}).catch(console.error);
