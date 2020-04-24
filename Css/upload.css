@@ -81,7 +81,7 @@ body{
 .textCont{
     display: flex;
     justify-content: flex-end;
-    width: 518px;
+    width: 518px;   
     height: 190px;
 
     font-family: ChakraPetch-Regular;
@@ -100,7 +100,7 @@ body{
 .btnCancelar{
     height: 36px;
     width: 144px;
-    margin:0 5px 0 5px;
+    margin:0 15px 0 5px;
 	line-height: 32px;
 	background:#FFF4FD;
 	border: 1px solid #110038;
@@ -111,6 +111,8 @@ body{
     color: #110038;
     letter-spacing: 0;
     text-align: center;
+    text-decoration: none;
+    z-index: 100;
 
 }
 #comenzarGifo{

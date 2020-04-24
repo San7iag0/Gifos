@@ -13,6 +13,7 @@ function comenzarGifo(){
     document.querySelector('.videoParent').style.display = 'grid';
     document.getElementById('repetir').style.display = 'none';
     document.getElementById('subirG').style.display = 'none';
+    document.getElementById('btn_Cancelar_gif').style.display = 'none';
 }
 document.getElementById('comenzarGifo').onclick = function (){
 
@@ -25,7 +26,7 @@ function capturar(){
 	document.querySelector('#btnStart').style.display = 'none';
 	document.querySelector('.camera').style.display = 'none';
 	document.querySelector('.recording').style.display = 'grid';
-
+    document.getElementById('btn_Cancelar_gif').style.display = 'none';
 	document.querySelector('.titleV').innerHTML = 'Capturando Tu Guifo';
 }
 
@@ -43,6 +44,7 @@ document.querySelector('.btnStop').onclick = function (){
     document.getElementById('subirG').style.display = 'grid';
     document.querySelector('.btnStop').style.display = 'none';
     document.querySelector('.recording').style.display = 'none';
+    document.getElementById('btn_Cancelar_gif').style.display = 'none';
 
     stopRecording();
     
@@ -56,6 +58,10 @@ document.getElementById('repetir').onclick = function (){
     document.querySelector('.recording').style.display = 'grid';
 
     recordingGif();
+}
+document.getElementById('subirG').onclick = function(){
+    document.getElementById('btn_Cancelar_gif').style.display = 'grid';    document.getElementById('repetir').style.display = 'none';
+    document.getElementById('subirG').style.display = 'none';
 }
 
 function captureCamera(callback) {
