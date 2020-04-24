@@ -1,5 +1,6 @@
 var recorder;
 const image = document.querySelector('#videoimg');
+const video = document.getElementById('video');
 
 // functions to change stiles 
 //boton comenzar 
@@ -10,8 +11,12 @@ function comenzarGifo(){
 	document.querySelector('.btnStop').style.display = 'none';
 	document.querySelector('.recording').style.display = 'none';
     document.querySelector('.videoParent').style.display = 'grid';
-    
-    visualizar()
+    document.getElementById('repetir').style.display = 'none';
+    document.getElementById('subirG').style.display = 'none';
+}
+document.getElementById('comenzarGifo').onclick = function (){
+
+	comenzarGifo(); // cambio de estilos DOM 	
 }
 
 function capturar(){
@@ -23,21 +28,32 @@ function capturar(){
 	document.querySelector('.titleV').innerHTML = 'Capturando Tu Guifo';
 }
 
-// buttons 
-document.getElementById('comenzarGifo').onclick = function (){
-
-	comenzarGifo(); // cambio de estilos DOM 
-	
-}
 //btn capturar 
 document.getElementById('btnStart').onclick = function (){
 	capturar();
 	recordingGif();
 }
-//btn listo
+//boton listo
 document.querySelector('.btnStop').onclick = function (){
-    //document.querySelector('#btnStart').style.display = 'grid';
-	stopRecording();
+
+    document.getElementById('btnStart').style.display ='none';
+    document.getElementById('repetir').style.display = 'grid';
+    document.getElementById('subirG').style.display = 'grid';
+    document.querySelector('.btnStop').style.display = 'none';
+    document.querySelector('.recording').style.display = 'none';
+
+    stopRecording();
+    
+}
+
+document.getElementById('repetir').onclick = function (){
+    
+    document.getElementById('repetir').style.display = 'none';
+    document.getElementById('subirG').style.display = 'none';
+    document.querySelector('.btnStop').style. display = 'grid';
+    document.querySelector('.recording').style.display = 'grid';
+
+    recordingGif();
 }
 
 function captureCamera(callback) {
@@ -95,17 +111,15 @@ function stopRecordingCallback() {
 function stopRecording() {
     this.disabled = true;
     recorder.stopRecording(stopRecordingCallback);	
-    //document.querySelector('#btnStart').style.display = 'grid';
 };
-
 /////////////
-function visualizar(){
+function CheckVideo(){
 	navigator.mediaDevices.getUserMedia({
 		audio:false,
 		video:true
-	}).then(function(stream){
-		image.srcObject = stream;
-		image.play()
+    }).then(function(stream){
+		video.srcObject = stream;
+		video.play()
 	}).catch(console.error);
 }
 	

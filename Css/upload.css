@@ -162,9 +162,9 @@ body{
     background:#E6E6E6;   
  }
 
-
-/*******************************************/
 .titleV{
+    display: flex;
+    align-items: center;
    font-family: ChakraPetch-Regular;
    font-size: 15px;
    background-image: linear-gradient(to right, #4180F6, #F7C9F3);
@@ -191,8 +191,15 @@ body{
 	background:#FFFFFF;
 	border:1px solid #979797;
 	box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
-	
-	
+    
+    position:relative;	
+}
+
+.video{
+    position: absolute;
+}
+.videoimg{
+    position: absolute;
 }
 
 .capturar{
@@ -239,10 +246,8 @@ body{
 	line-height:18px;
 	
 }
-
 .recording{
     position: relative;
-    
 }
 .recording::before{
     content: url(./../Images/recording.svg);
@@ -258,7 +263,6 @@ body{
     background: #FF6161;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
-
 }
 
 .btnStop{
@@ -278,10 +282,7 @@ body{
     line-height: 18px;
 }
 
-
-
 #repetir{
-	/* display:none; */
 	height: 36px;
 	width: 144px;
 	
@@ -299,7 +300,6 @@ body{
 	
 }
 #subirG{
-	/* display:grid; */
 	height: 36px;
 	width: 144px;
 	
@@ -312,7 +312,17 @@ body{
 	color: #110038;
 	letter-spacing: 0;
 	text-align: center;
-	line-height: 18px;	
+    line-height: 18px;	
+    margin-right: 20px;
 }
 
+/*  */
+#videoimg{
+    height: 433px;
+    width: 830px;
 
+}
+.video{
+    height: 433px;
+    width: 830px;
+}
