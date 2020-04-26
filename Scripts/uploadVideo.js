@@ -35,7 +35,6 @@ function capturar(){
 //btn capturar 
 document.getElementById('btnStart').onclick = function (){
     capturar();
-    MediaStreamTrack.stop()
     recordingGif();   
 
     checkVideoStop();
@@ -75,6 +74,11 @@ function captureCamera(callback) {
         alert('Unable to capture your camera. Please check console logs.');
         console.error(error);
     });
+}
+// subir gifos btn 
+document.getElementById('subirG').onclick = function (){
+    image.style.display = 'none';
+    document.querySelector('.subiendo').style.display = 'grid';
 }
 
 var recorder; 

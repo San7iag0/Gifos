@@ -185,6 +185,11 @@ body{
 }
 
 .videoBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*  */
+    width: 832px;
 	width:832px;
 	height:434px;
 	margin:14px 0 0 0;
@@ -413,4 +418,21 @@ box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 	letter-spacing: 0;
 	text-align: center;
 	line-height: 18px;
+}
+.subiendo{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+}
+.subiendoP{
+    font-family: ChakraPetch-Bold;
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 22px;
+}
+.subiendo img {
+    justify-self: center;
 }
