@@ -167,11 +167,11 @@ body{
 .titleV{
     display: flex;
     align-items: center;
-   font-family: ChakraPetch-Regular;
-   font-size: 15px;
-   background-image: linear-gradient(to right, #4180F6, #F7C9F3);
-   color: #FFFFFF;
-   letter-spacing: 0;
+    font-family: ChakraPetch-Regular;
+    font-size: 15px;
+    background-image: linear-gradient(to right, #4180F6, #F7C9F3);
+    color: #FFFFFF;
+    letter-spacing: 0;
 }
 .videoParent{
 	display:none;
@@ -329,4 +329,88 @@ body{
     width: 830px;
     position: absolute;
     object-fit: fill;
+}
+ /* 7//////////////////////////////////////////  */
+.mainpload{
+	grid-area:content;
+	display:none;
+	grid-template-rows: 30px 200px 1fr;
+	grid-template-columns:1fr 1fr;
+	grid-template-areas:
+		"titleCaptura titleCaptura"
+		"minCaptura minCaptura"
+		"btnCaptura btnCaptura"
+		;
+	height: 391px;
+	width: 721px;	
+	background: #E6E6E6;
+box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+.titleCaptura{
+	grid-area: titleCaptura;
+	height: 24px;
+    width: 715px;
+    color: white;
+	background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    font-family: ChakraPetch-Regular;
+    font-size: 15px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+.minCaptura{
+	display:flex;
+	padding:15px;
+}
+#videoCaptura{
+	max-width: 365px;
+	height: 191px;
+	margin-right:10px;	
+	background: #FFFFFF;
+	border: 1px solid #979797;
+	box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+.btnsCaptura{
+	width: 325px;
+}
+.pCaptura{
+	font-family: ChakraPetch-Bold;
+	font-size: 16px;
+	color: #110038;
+	letter-spacing: 0;
+	line-height: 22px;
+}
+.btnsgifos{
+	height: 36px;
+	width: 256px;
+	font-family: ChakraPetch-Regular;
+	font-size: 16px;
+	color: #110038;
+	letter-spacing: 0;
+	text-align: center;
+	line-height: 18px;
+	background: #FFF4FD;
+	border: 1px solid #110038;
+	box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+	margin: 0  0 10px 0;
+}
+.btnDCaptura{
+	grid-area:btnCaptura;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+.btnCaptura{
+	width: 144px;
+	height: 36px;
+	margin:0 40px 20px 0;
+	background: #F7C9F3;
+	border: 1px solid #110038;
+	box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+	
+	font-family: ChakraPetch-Regular;
+	font-size: 16px;
+	color: #110038;
+	letter-spacing: 0;
+	text-align: center;
+	line-height: 18px;
 }

@@ -1,6 +1,6 @@
 var recorder;
 const image = document.querySelector('#videoimg');
-const video = document.querySelector('video');
+const video = document.querySelector('.video');
 
 // functions to change stiles 
 //boton comenzar 
@@ -15,6 +15,7 @@ function comenzarGifo(){
     document.getElementById('subirG').style.display = 'none';
     document.getElementById('btn_Cancelar_gif').style.display = 'none';
 }
+
 document.getElementById('comenzarGifo').onclick = function (){
 
     comenzarGifo(); // cambio de estilos DOM 
@@ -27,14 +28,17 @@ function capturar(){
 	document.querySelector('.camera').style.display = 'none';
 	document.querySelector('.recording').style.display = 'grid';
     document.getElementById('btn_Cancelar_gif').style.display = 'none';
-	document.querySelector('.titleV').innerHTML = 'Capturando Tu Guifo';
+    document.querySelector('.titleV').innerHTML = 'Capturando Tu Guifo';
+    document.querySelector('.video').style.display = 'none';
 }
 
 //btn capturar 
 document.getElementById('btnStart').onclick = function (){
     capturar();
+    MediaStreamTrack.stop()
+    recordingGif();   
 
-	recordingGif();
+    checkVideoStop();
 }
 //boton listo
 document.querySelector('.btnStop').onclick = function (){
@@ -122,7 +126,7 @@ function stopRecording() {
 };
 
 function checkVideo(){
-	navigator.mediaDevices.getUserMedia({
+    videoCheck = navigator.mediaDevices.getUserMedia({
 		audio:false,
 		video:true
 	}).then(function(stream){
@@ -130,8 +134,16 @@ function checkVideo(){
 		video.play()
 	}).catch(console.error);
 }
-	
+
+function checkVideoStop(){
+    const video = document.querySelector('.video');
+    const mediaStream = video.srcObject;
+    const track = mediaStream.getTracks();
+    track[0].stop();
+}
+
 /* 
 split es un metodo de String
 por lo que localStorage.get("keyGiffURL") en realidad lo que le devuelve es un string
 y split si le retorna una lista */
+// document.getElementById
