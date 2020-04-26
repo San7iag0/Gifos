@@ -24,7 +24,7 @@ body{
 
     font-family: ChakraPetch-Regular;
     font-size: 15px;
-    color: #FFFFFF;
+    color: #FFFFFF; 
     letter-spacing: 0;
 }
 
@@ -151,7 +151,7 @@ body{
     border: solid 1px #E6BBE2;
     box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80887D;
 }
-.misGifosBox{
+#misGifosBox{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 32px 1fr;
@@ -336,7 +336,7 @@ body{
     object-fit: fill;
 }
  /* 7//////////////////////////////////////////  */
-.mainpload{
+.mainupload{
 	grid-area:content;
 	display:none;
 	grid-template-rows: 30px 200px 1fr;

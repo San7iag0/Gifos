@@ -1,13 +1,19 @@
 var recorder;
+const apiKey = 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW';
 const image = document.querySelector('#videoimg');
 const video = document.querySelector('.video');
 
+setUp();
+
+function setUp() {
+  printMyGifs();
+}
 // functions to change stiles 
 //boton comenzar 
 function comenzarGifo(){
 	document.querySelector('.crearGifos').style.display = 'none';
 	document.querySelector('.misGifos').style.display = 'none';
-	document.querySelector('.misGifosBox').style.display = 'none';
+	document.getElementById('misGifosBox').style.display = 'none';
 	document.querySelector('.btnStop').style.display = 'none';
 	document.querySelector('.recording').style.display = 'none';
     document.querySelector('.videoParent').style.display = 'grid';
@@ -62,9 +68,40 @@ document.getElementById('repetir').onclick = function (){
 
     recordingGif();
 }
+// subir gifos btn
 document.getElementById('subirG').onclick = function(){
-    document.getElementById('btn_Cancelar_gif').style.display = 'grid';    document.getElementById('repetir').style.display = 'none';
+    document.getElementById('btn_Cancelar_gif').style.display = 'grid';    
+    document.getElementById('repetir').style.display = 'none';
     document.getElementById('subirG').style.display = 'none';
+    document.querySelector('.videoParent').style.display = 'none';
+    document.querySelector('.mainupload').style.display = 'grid';
+
+    image.style.display = 'none';
+    document.querySelector('.subiendo').style.display = 'grid';
+
+}
+
+function printMyGifs (){
+
+  if (localStorage.getItem("keyGiffURL")) {
+    let giftlist = localStorage.getItem("keyGiffURL").split(",");
+    let misGifosBox = document.getElementById('misGifosBox');
+    let preview = document.getElementById('videoCaptura');
+      
+    for (var i = 0; i < giftlist.length; i++) {
+      if (giftlist[i] !== "null") {      
+        let box = document.createElement('img');
+        box.className = 'box';
+        box.setAttribute('src', giftlist[i]);
+        misGifosBox.appendChild(box);
+      }
+    }
+  }
+}
+
+document.getElementById('btnListo2').onclick = function (){
+  location.reload();
+  // vamos a agregar los gifos nuevos desde aca 
 }
 
 function captureCamera(callback) {
@@ -75,12 +112,6 @@ function captureCamera(callback) {
         console.error(error);
     });
 }
-// subir gifos btn 
-document.getElementById('subirG').onclick = function (){
-    image.style.display = 'none';
-    document.querySelector('.subiendo').style.display = 'grid';
-}
-
 var recorder; 
 function recordingGif() {
     this.disabled = true;
@@ -146,8 +177,19 @@ function checkVideoStop(){
     track[0].stop();
 }
 
-/* 
-split es un metodo de String
-por lo que localStorage.get("keyGiffURL") en realidad lo que le devuelve es un string
-y split si le retorna una lista */
-// document.getElementById
+
+
+
+/**let urlgifo;
+let requestOptions = {
+  method: "POST",
+  body: formData,
+  redirect: "follow"
+};
+
+async function uploadGif(){
+  this.disabled = true;
+  await fetch("https://upload.giphy.com/v1/gifs?api_key=" + apiKey,
+  requestOptions)
+} */
+
