@@ -186,7 +186,7 @@ function searchGif() {
 	let searchText = document.getElementById("inputSearch").value;
 	let container = document.getElementById('dynamicGifts');
 
-	fetch(`http://api.giphy.com/v1/gifs/search?q=${searchText}&api_key=` + apiKey)
+	fetch(`https://api.giphy.com/v1/gifs/search?q=${searchText}&api_key=` + apiKey)
 		.then((response) => {
 		return response.json();
 	})
