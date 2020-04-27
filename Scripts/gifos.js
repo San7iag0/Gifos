@@ -47,9 +47,6 @@ function light() {
 			searchDayStayle[i].classList.replace('searchDark', 'search');
 	
 		}
-		document.querySelectorAll('.title').style = titleDark;
-
-
 }
 //change style to dark 
 function dark(){
