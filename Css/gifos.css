@@ -25,6 +25,7 @@ body{
    color: #FFFFFF;
    letter-spacing: 0;
 }
+
 .header{
    grid-area: header;
    display: flex;
@@ -271,6 +272,7 @@ body{
 }
 
 .grid{
+
    display: grid;
    grid-template-columns: 122px 600px 600px 122px;
    grid-template-rows:70px 145px 100px auto auto 510px 280px;

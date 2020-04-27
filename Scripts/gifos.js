@@ -47,6 +47,9 @@ function light() {
 			searchDayStayle[i].classList.replace('searchDark', 'search');
 	
 		}
+		document.querySelectorAll('.title').style = titleDark;
+
+
 }
 //change style to dark 
 function dark(){
@@ -54,7 +57,7 @@ function dark(){
 
 	let titleDarkStyle = document.getElementsByClassName('title');
 	let iconsgifosDarkStyle = document.getElementsByClassName('imggifoslog');
-	let buttonHeaderDarkStyle = document.getElementsByClassName('buttonsHeader');	
+	let buttonHeaderDarkStyle = document.querySelectorAll('.buttonsHeader');	
 	let buscarDarkStyle	= document.getElementsByClassName('buscar');
 	let boxheaderDarkStyle = document.getElementsByClassName('boxheader');
 	let dropdownDarkStyle = document.getElementsByClassName('dropdownContent');
@@ -100,21 +103,20 @@ function test() {
 }
 */
 
-// function onload width ramdom gits 
 window.onload = () => {
 	printTendencyGifs();
 
-	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= fiercedom honey &api_key=' + apiKey + "&limit=2", 'advice');
-	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= sailor moon peace &api_key=' + apiKey + "&limit=2", 'advice1');
-	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= queer eye &api_key=' + apiKey + "&limit=2", 'advice2');
-	createBoxesWithGifts('http://api.giphy.com/v1/gifs/search?q= unicorn &api_key=' + apiKey + "&limit=2", 'advice3');
+	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q= fiercedom honey &limit=2 &api_key=${apiKey}`, 'advice');
+	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q= sailor moon peace &limit=2&api_key=${apiKey}`, 'advice1');
+	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q= hi5 &limit=2 &api_key=${apiKey}`, 'advice2');
+	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q= unicorn &limit=2 &api_key=${apiKey}`, 'advice3');
 }
 
 // funtion for tnedency gifs and hover title
 let container = document.getElementById('content');	
 function printTendencyGifs(){
 	
-	fetch("https://api.giphy.com/v1/gifs/trending?" + "&api_key=" + apiKey + '&limit=12')
+	fetch(`https://api.giphy.com/v1/gifs/trending?&limit=12&api_key=${apiKey}`)
 	.then((response) => {
 		return response.json();
 	})
@@ -285,16 +287,16 @@ document.getElementById('Btn2Search').onclick = function (){
 
 //function VER MAS... buttons 
 document.getElementById('firstbtn').onclick = function (){
-	btnVerMas('https://api.giphy.com/v1/gifs/search?q= Jonathan &api_key=' + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW');
+	btnVerMas(`https://api.giphy.com/v1/gifs/search?q= Jonathan&api_key=${apiKey}`);
 }
 document.getElementById('secondBtn').onclick = function (){
-	btnVerMas('https://api.giphy.com/v1/gifs/search?q= sailor moon &api_key=' + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW');
+	btnVerMas(`https://api.giphy.com/v1/gifs/search?q= sailor moon&api_key=${apiKey}`);
 }
 document.getElementById('thirdbtn').onclick = function (){
-	btnVerMas('https://api.giphy.com/v1/gifs/search?q= fab5 &api_key=' + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW');
+	btnVerMas(`https://api.giphy.com/v1/gifs/search?q= fab5 &api_key=${apiKey}`);
 }
 document.getElementById('fourthbtn').onclick = function(){
-	btnVerMas('https://api.giphy.com/v1/gifs/search?q= unicorns &api_key=' + 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW');
+	btnVerMas(`https://api.giphy.com/v1/gifs/search?q= unicorns&api_key=${apiKey}`);
 }
 
 // funtion to print the new boxes with the gifs from the VER MAS Bottons

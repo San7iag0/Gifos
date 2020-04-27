@@ -106,32 +106,34 @@ async function postGiffIntoGiphy(blob) {
 //{"data":{"id":"SuyAWpGxP69BcTPQ5g"},"meta":{"msg":"OK","status":200}}
 }
 
-
+// leturlGif;
 async function getGifById(id){
     await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${apiKey}`)
     .then(response => response.json())
     .then(response => {
         let preview = document.getElementById('videoCaptura');
-        preview.setAttribute('src', response.data.images.original.url)
+        preview.setAttribute('src', response.data.images.original.url);
 
-        //2. traer el input y asignarle el valor de la url           
-        // input.setAttribute('value', response.data.images.original.url);
-        // input.style.display = 'none';
+        inputClickboard.value = response.data.images.original.url;
+        inputClickboard.select();
+        document.execCommand("copy");    
+        clickBoard(inputClickboard);
+        inputClickboard.value =  "";
 
-        localStorage.setItem('clickBoard', response.data.images.original.url);
     })
 }
-
-document.getElementById('enlaceCapturabtn').onclick = function(){
-    let input = document.getElementById('inputClipboard');
-      /* Select the text field */
-  input.select();
-
-
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
+// function to copy the gif 
+function clickBoard(inputClickboard){
+    var inputClickboard = document.getElementById('inputClipboard');
     
 }
+// let input = document.getElementById('inputClipboard');
+
+document.getElementById('enlaceCapturabtn').onclick = function(){
+ 
+    clickBoard(inputClickboard);
+}
+
 
 function printMyGifs (){
 
