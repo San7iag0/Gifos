@@ -106,10 +106,10 @@ function test() {
 window.onload = () => {
 	printTendencyGifs();
 
-	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q= fiercedom honey &limit=2 &api_key=${apiKey}`, 'advice');
-	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q= sailor moon peace &limit=2&api_key=${apiKey}`, 'advice1');
-	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q= hi5 &limit=2 &api_key=${apiKey}`, 'advice2');
-	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/search?q= unicorn &limit=2 &api_key=${apiKey}`, 'advice3');
+	createBoxesWithGifts(`https://api.giphy.com/v1/gifs/search?q= fiercedom honey &limit=2 &api_key=${apiKey}`, 'advice');
+	createBoxesWithGifts(`https://api.giphy.com/v1/gifs/search?q= sailor moon peace &limit=2&api_key=${apiKey}`, 'advice1');
+	createBoxesWithGifts(`https://api.giphy.com/v1/gifs/search?q= hi5 &limit=2 &api_key=${apiKey}`, 'advice2');
+	createBoxesWithGifts(`https://api.giphy.com/v1/gifs/search?q= unicorn &limit=2 &api_key=${apiKey}`, 'advice3');
 }
 
 // funtion for tnedency gifs and hover title
