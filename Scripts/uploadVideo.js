@@ -79,6 +79,58 @@ document.getElementById('subirG').onclick = function(){
     image.style.display = 'none';
     document.querySelector('.subiendo').style.display = 'grid';
 
+    postGiffIntoGiphy(blobTest);
+
+}
+
+async function postGiffIntoGiphy(blob) {
+    let form = new FormData();
+
+    form.append('file', blob, 'myGif.gif');
+    console.log(form.get('file'));
+
+    let requestOptions = {
+        method: "POST",
+        body: form,
+        redirect: "follow"
+    }
+
+
+    await fetch(`https://upload.giphy.com/v1/gifs?api_key=${apiKey}`, requestOptions)
+        .then(response => response.json())
+        .then(response => {
+            let id = response.data.id;
+            getGifById(id);
+        });
+//https://api.giphy.com/v1/gifs/SuyAWpGxP69BcTPQ5g?api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW
+//{"data":{"id":"SuyAWpGxP69BcTPQ5g"},"meta":{"msg":"OK","status":200}}
+}
+
+
+async function getGifById(id){
+    await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${apiKey}`)
+    .then(response => response.json())
+    .then(response => {
+        let preview = document.getElementById('videoCaptura');
+        preview.setAttribute('src', response.data.images.original.url)
+
+        //2. traer el input y asignarle el valor de la url           
+        // input.setAttribute('value', response.data.images.original.url);
+        // input.style.display = 'none';
+
+        localStorage.setItem('clickBoard', response.data.images.original.url);
+    })
+}
+
+document.getElementById('enlaceCapturabtn').onclick = function(){
+    let input = document.getElementById('inputClipboard');
+      /* Select the text field */
+  input.select();
+
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+    
 }
 
 function printMyGifs (){
@@ -86,7 +138,6 @@ function printMyGifs (){
   if (localStorage.getItem("keyGiffURL")) {
     let giftlist = localStorage.getItem("keyGiffURL").split(",");
     let misGifosBox = document.getElementById('misGifosBox');
-    let preview = document.getElementById('videoCaptura');
       
     for (var i = 0; i < giftlist.length; i++) {
       if (giftlist[i] !== "null") {      
@@ -101,7 +152,6 @@ function printMyGifs (){
 
 document.getElementById('btnListo2').onclick = function (){
   location.reload();
-  // vamos a agregar los gifos nuevos desde aca 
 }
 
 function captureCamera(callback) {
@@ -137,13 +187,13 @@ let cameraCallback = function(camera) {
     
     document.getElementById('btnStart').display = "none";
 }
-
+let blobTest;
 function stopRecordingCallback() {
     // the giff URL
     let giffURL = URL.createObjectURL(recorder.getBlob());
     // sets the giff url to the video preview
     image.src = giffURL;
-
+    blobTest = recorder.getBlob();
     //local storage
     // gets the list of giffs from localstorege
     let giffURLs = localStorage.getItem("keyGiffURL");
@@ -177,19 +227,4 @@ function checkVideoStop(){
     track[0].stop();
 }
 
-
-
-
-/**let urlgifo;
-let requestOptions = {
-  method: "POST",
-  body: formData,
-  redirect: "follow"
-};
-
-async function uploadGif(){
-  this.disabled = true;
-  await fetch("https://upload.giphy.com/v1/gifs?api_key=" + apiKey,
-  requestOptions)
-} */
 
