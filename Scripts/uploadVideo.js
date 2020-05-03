@@ -228,5 +228,3 @@ function checkVideoStop(){
     const track = mediaStream.getTracks();
     track[0].stop();
 }
-
-
