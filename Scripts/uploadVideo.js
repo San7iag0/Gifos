@@ -2,11 +2,14 @@ var recorder;
 const apiKey = 'InPSloMgOZvkGaz56pe7fI8SIsp0PDlW';
 const image = document.querySelector('#videoimg');
 const video = document.querySelector('.video');
+const GIF_TEMP_VIDEO = 'giftempvideo';
+const KEY_GIFF_URL = 'keyGiffURL';
 
 setUp();
 
 function setUp() {
   printMyGifs();
+
 }
 // functions to change stiles 
 //boton comenzar 
@@ -74,7 +77,13 @@ document.getElementById('subirG').onclick = function(){
     document.getElementById('repetir').style.display = 'none';
     document.getElementById('subirG').style.display = 'none';
     document.querySelector('.videoParent').style.display = 'none';
-    document.querySelector('.mainupload').style.display = 'grid';
+    
+    // TODO: CAMBIO DE DOM PARA MOSTRAR EL DISPLAY DE videoParent
+    document.querySelector('.videoParent').style.display = 'grid'
+    
+    // 
+
+
 
     image.style.display = 'none';
     document.querySelector('.subiendo').style.display = 'grid';
@@ -82,6 +91,7 @@ document.getElementById('subirG').onclick = function(){
     postGiffIntoGiphy(blobTest);
 
 }
+
 
 async function postGiffIntoGiphy(blob) {
     let form = new FormData();
@@ -101,6 +111,7 @@ async function postGiffIntoGiphy(blob) {
         .then(response => {
             let id = response.data.id;
             getGifById(id);
+
         });
 //https://api.giphy.com/v1/gifs/SuyAWpGxP69BcTPQ5g?api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW
 //{"data":{"id":"SuyAWpGxP69BcTPQ5g"},"meta":{"msg":"OK","status":200}}
@@ -114,11 +125,17 @@ async function getGifById(id){
         let preview = document.getElementById('videoCaptura');
         preview.setAttribute('src', response.data.images.original.url);
 
+        // TODO: mostrar la ventana de el gif funcionando 
+        document.querySelector('.videoParent').style.display = 'none';
+        document.querySelector('.mainupload').style.display = 'grid';
+
+        localStorage.setItem(GIF_TEMP_VIDEO, response.data.images.original.url);
         inputClickboard.value = response.data.images.original.url;
         inputClickboard.select();
         document.execCommand("copy");    
         clickBoard(inputClickboard);
         inputClickboard.value =  "";
+
 
     })
 }
@@ -137,8 +154,8 @@ document.getElementById('enlaceCapturabtn').onclick = function(){
 
 function printMyGifs (){
 
-  if (localStorage.getItem("keyGiffURL")) {
-    let giftlist = localStorage.getItem("keyGiffURL").split(",");
+  if (localStorage.getItem(KEY_GIFF_URL)) {
+    let giftlist = localStorage.getItem(KEY_GIFF_URL).split(",");
     let misGifosBox = document.getElementById('misGifosBox');
       
     for (var i = 0; i < giftlist.length; i++) {
@@ -153,7 +170,14 @@ function printMyGifs (){
 }
 
 document.getElementById('btnListo2').onclick = function (){
-  location.reload();
+    //local storage
+    // gets the list of giffs from localstorege
+    let listGiffURLs = localStorage.getItem(KEY_GIFF_URL);
+    let gifyUrl =  localStorage.getItem(GIF_TEMP_VIDEO);
+    // adds the giff URL into the localstorage list
+    localStorage.setItem(KEY_GIFF_URL, `${listGiffURLs},${gifyUrl}`);
+
+    location.reload();
 }
 
 function captureCamera(callback) {
@@ -196,11 +220,6 @@ function stopRecordingCallback() {
     // sets the giff url to the video preview
     image.src = giffURL;
     blobTest = recorder.getBlob();
-    //local storage
-    // gets the list of giffs from localstorege
-    let giffURLs = localStorage.getItem("keyGiffURL");
-    // adds the giff URL into the localstorage list
-    localStorage.setItem("keyGiffURL", `${giffURLs},${giffURL}`);
 
     recorder.camera.stop();
     recorder.destroy();
