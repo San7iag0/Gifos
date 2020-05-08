@@ -153,14 +153,14 @@ body{
 }
 #misGifosBox{
     display: grid;
+    grid-gap: 20px;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 32px 1fr;
+    /* grid-template-rows: 32px 1fr; */
 }
 .box{
     display:grid;
     width: 280px;
     height: 280px;
-    /* box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #ffffff; */
     background:#E6E6E6;   
  }
 
