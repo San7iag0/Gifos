@@ -90,15 +90,7 @@ function dark(){
 			searchDarkStyle[i].classList.replace('search', 'searchDark');
 		}
 }
-/*
-function test() {
-	let buttonHeaderDarkStyle = document.getElementsByClassName('buttonsHeader');
 
-	for (let i = buttonHeaderDarkStyle.length -1; i => 0; i= buttonHeaderDarkStyle.length -1) {
-		buttonHeaderDarkStyle[i].classList.replace('buttonsHeader','buttonsHeaderDark');
-	}
-}
-*/
 
 window.onload = () => {
 	printTendencyGifs();
