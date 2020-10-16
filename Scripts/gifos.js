@@ -330,7 +330,3 @@ function pageScroll(){
 function adviceNewBoxes(){
 	document.getElementById("adviceNewBoxes").style.display = "grid";
 }
-
-
-
-
