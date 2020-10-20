@@ -22,6 +22,13 @@ function light() {
 	let sailorNbuttonDayStyle = document.getElementsByClassName('sailorNbuttonDark');
 	let searchDayStayle = document.getElementsByClassName('searchDark')
 
+/*
+		for (let i = 0; i < ........lenght; i ++){
+			
+		}
+
+*/
+	
 		for (let i = 0; i < titleDayStyle.length; i++){
 			titleDayStyle[i].classList.replace('titleDark', 'title');
 		}
