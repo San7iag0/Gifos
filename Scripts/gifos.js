@@ -24,7 +24,9 @@ function light() {
 
 /*
 		for (let i = 0; i < ........lenght; i ++){
-			
+			titleDayStyle[i].classList.replace('titleDark', 'title');
+			buttonHeaderDayStyle[i].classList.replace('buttonsHeaderDark', 'buttonsHeader'); 
+
 		}
 
 */
