@@ -1,3 +1,14 @@
+:root {
+   --lightRoseColor: #F7C9F3;
+   --roseColor: #EE3EFE;
+   --LightBlueColor: #4180F6;
+   --blueColor: #2E32FB;
+   --white:  #FFFFFF;
+/* CHECK THIS COLOR */
+   --darkBlueColor: #110038;
+
+}
+
 body{
    margin: 0;
    padding: 0;
@@ -10,8 +21,8 @@ body{
    font-size: 15px;
    height: 23px;
    width: 1438px;
-   background-image: linear-gradient(to right, #4180F6, #F7C9F3);
-   color: #FFFFFF;
+   background-image: linear-gradient(to right, var(--LightBlueColor), var(--lightRoseColor));
+   color: var(--white);
    letter-spacing: 0;
 }
 .titleDark{
@@ -20,9 +31,9 @@ body{
    font-size: 15px;
    height: 23px;
    width: 1438px;
-   background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
-   box-shadow: 0 1px 0 0 #110038;
-   color: #FFFFFF;
+   background-image: linear-gradient(270deg, var(--roseColor) 0%, var(--blueColor) 100%);
+   box-shadow: 0 1px 0 0 var(--darkBlueColor);
+   color: var(--white);
    letter-spacing: 0;
 }
 
@@ -45,13 +56,13 @@ body{
 /* botones y icono de gifos en heather */
 .buttonsHeader{
    font-family: ChakraPetch-Regular;
-   color: #110038;
+   color: var(--darkBlueColor);
    letter-spacing: 0;
    text-align: center;
    line-height: 18px;
-   background: #F7C9F3;
-   border: 1px solid #110038;
-   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+   background: var(--lightRoseColor);
+   border: 1px solid var(--darkBlueColor);
+   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 var(--white);
    font-size: 16px;
    height: 36px;
    width: 131px;
@@ -60,23 +71,23 @@ body{
  }
 .buttonsHeaderDark{
    font-family: ChakraPetch-Regular;
-   color: #FFFFFF;
+   color: var(--white);
    letter-spacing: 0;
    text-align: center;
    line-height: 18px;
-   background: #EE3EFE;
-   border: 1px solid #110038;
-   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+   background: var(--roseColor);
+   border: 1px solid var(--darkBlueColor);
+   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 var(--white);
    font-size: 16px;
    height: 36px;
    width: 131px;
    margin: 10px 0 0 10px;
  }
  .buttonsHeader:hover{
-   outline: 1px dashed #110038;
+   outline: 1px dashed var(--darkBlueColor);
    outline-offset: -4px;
    color: white;
-   box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
+   box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 var(--white);
 }
  
 .search{
@@ -93,14 +104,14 @@ body{
    height: 99px; 
 }
 .buscar{
-   color: #FFFFFF;
+   color: var(--white);
    display: flex;
    align-items: center;
    font-family: ChakraPetch-Bold;
    font-size: 14px;
    letter-spacing: 0;   
    height: 23px;
-   background-image: linear-gradient(to right, #4180F6, #F7C9F3);
+   background-image: linear-gradient(to right, var(--LightBlueColor), var(--lightRoseColor));
 }
 
 .buscarDark{
@@ -108,10 +119,10 @@ body{
    align-items: center;
    font-family: ChakraPetch-Bold;
    font-size: 14px;
-   color: #FFFFFF;
+   color: var(--white);
    letter-spacing: 0;   
    height: 23px;
-   background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+   background-image: linear-gradient(270deg, var(--roseColor) 0%, var(--blueColor) 100%);
 }
 
 .searchChil{
@@ -129,7 +140,7 @@ body{
    width: 1057px;
    height: 48px;
    background-color: #E6E6E6;
-   background: #FFFFFF;
+   background: var(--white);
    border: 1px solid #979797;
    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
 }
@@ -147,7 +158,7 @@ body{
    margin: 0 0 0 10px;
    background: #E6E6E6;
    border: 1px solid #808080;
-   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 var(--white);
    
 }
 
@@ -158,7 +169,7 @@ body{
 .sugerencias{
    font-family: ChakraPetch-Regular;
    font-size: 14px;
-   color: #110038;
+   color: var(--darkBlueColor);
    letter-spacing: 0;
 
    display: grid;
@@ -185,7 +196,7 @@ body{
 #textadvice, #textadvice1, #textadvice2, #textadvice3{
    font-family: ChakraPetch-Bold;
    font-size: 16px;
-   color: #FFFFFF;
+   color: var(--white);
    letter-spacing: 0;
 }
 .boxheader{
@@ -194,7 +205,7 @@ body{
    align-items: center;
    width:280px;
    height:24px;
-   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%); 
+   background-image: linear-gradient(270deg,var(--lightRoseColor) 0%, var(--LightBlueColor) 100%); 
 }
 .boxheaderDark{
    display: flex;
@@ -202,7 +213,7 @@ body{
    align-items: center;
    width:280px;
    height:24px;
-   background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%); 
+   background-image: linear-gradient(270deg, var(--roseColor) 0%, var(--blueColor) 100%); 
 }
 
 .xImage{
@@ -214,18 +225,18 @@ body{
    height: 280px;
    background:#E6E6E6; 
    margin-bottom: 20px;   
-   box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+   box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 var(--white);
    position: relative;
 }
 .box:hover{
-	border:  1px dashed #110038;
+	border:  1px dashed var(--darkBlueColor);
 }
 
 
 .buttonVerMas{
    font-family: ChakraPetch-Regular;
    font-size: 14px;
-   color: #FFFFFF;
+   color: var(--white);
    letter-spacing: 0;
    text-align: center;
    line-height: 18px;
@@ -235,16 +246,16 @@ body{
    margin:18px;
    justify-self:start;
    align-self: end;
-   background:#4180f6;
+   background: var(--LightBlueColor);
    border: 1px solid #4C2F99;
-   box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+   box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 var(--white);
 
    position: absolute;
    z-index: 1;
    
 }
 .buttonVerMas:hover{
-	border:  1px dashed #110038;
+	border:  1px dashed var(--darkBlueColor);
 }
 .searchGIts{
    grid-area:searchGIts;
@@ -317,7 +328,7 @@ body{
    position: absolute;
    width: 165px;
    height: 102px;
-   box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+   box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 var(--white);
    z-index: 1;
    background: #B4B4B4;
 }
@@ -328,7 +339,7 @@ body{
 .sailorDbutton{
    font-family: ChakraPetch-Regular;
    font-size: 16px;
-   color: #110038;
+   color: var(--darkBlueColor);
    letter-spacing: 0;
    line-height: 22px;
 
@@ -337,12 +348,12 @@ body{
    margin: 10px 10px 5px 10px;
    background: #FFF4FD;
    border: 1px solid #CCA6C9;
-   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 var(--white);
 }
 .sailorDbuttonDark{
    font-family: ChakraPetch-Regular;
    font-size: 16px;
-   color: #110038;
+   color: var(--darkBlueColor);
    letter-spacing: 0;
    line-height: 22px;
 
@@ -351,13 +362,13 @@ body{
    margin: 10px 10px 5px 10px;
    background: #CCCCCC;
    border: 1px solid #808080;
-   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 var(--white);
 }
 
 .sailorNbutton{
    font-family: ChakraPetch-Regular;
    font-size: 16px;
-   color: #110038;
+   color: var(--darkBlueColor);
    letter-spacing: 0;
    line-height: 22px;
 
@@ -366,22 +377,22 @@ body{
    margin: 5px 10px 10px 10px;
    background: #FFF4FD;
    border: 1px solid #CCA6C9;
-   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 var(--white);
    
 }
 .sailorNbuttonDark{
    font-family: ChakraPetch-Regular;
    font-size: 16px;
-   color: #FFFFFF;
+   color: var(--white);
    letter-spacing: 0;
    line-height: 22px;
 
    width: 150px;
    height: 36px;
    margin: 5px 10px 10px 10px;
-   background: #2E32FB;
+   background: var(--blueColor);
    border: 1px solid rgba(51,53,143,0.20);
-   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 var(--white);
 }
 
 .arrow {
@@ -396,20 +407,14 @@ body{
   right: -37px;
   width: 36px;
   height: 34px;
-  background: #f7c9f3;
-  border: 1px solid #110038;
-  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  background: var(--lightRoseColor);
+  border: 1px solid var(--darkBlueColor);
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 var(--white);
   text-align: center;
   font-size: 28px;
   line-height: 25px;
   color: black;
 }
-
-/* ++++++++++++++++++ */
-
-
-
-/* +++++++++++++++++++++++ */
 
 .logoImgDark1{
    display: none;
@@ -421,16 +426,16 @@ body{
 .sugbuttons{
 	font-family: chakraPetch-Regular;
 	font-size:14px;
-	color:#FFFFFF;
+	color:var(--white);
 	letter-spacing:0;
 	line-height:18px;
 	
 	width:100px;
 	height:34px;
 	
-	background: #4180F6;
+	background: var(--LightBlueColor);
 	border: 1px solid #4C2F99;
-	box-shadow: inset -2px -2px 0 0 #284F99,inset 2px 2px 0 0 #FFFFFF;
+	box-shadow: inset -2px -2px 0 0 #284F99,inset 2px 2px 0 0 var(--white);
 	
 	margin:5px;
 }
@@ -441,7 +446,7 @@ body{
 #adviceNewBoxes{
 font-family: ChakraPetch-Regular;
 font-size: 14px;
-color: #110038;
+color: var(--darkBlueColor);
 letter-spacing: 0;
 
 display: none;
@@ -465,7 +470,7 @@ margin: 30px 0 30px 0;
    height:160px;
 
    background: #E6E6E6;
-   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #FFFFFF;
+   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 var(--white);
 }
 #despMenu1Dark{
    align-content:center;
@@ -474,7 +479,7 @@ margin: 30px 0 30px 0;
    height:160px;
 
    background: #E6E6E6;
-   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #FFFFFF;
+   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 var(--white);
 
 }
 .sugessText{
@@ -483,14 +488,14 @@ margin: 30px 0 30px 0;
    width:1055px;
    height:34px;
    border:1px solid #808080;
-   box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+   box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 var(--white);
    margin: 5px 0 5px 15px;
   
    background:#F0F0F0;
   
    font-family: ChakraPetch-Regular;
    font-size: 16px;
-   color: #110038;
+   color: var(--darkBlueColor);
    letter-spacing: 0;
    line-height: 22px;
 }
@@ -507,8 +512,8 @@ margin: 30px 0 30px 0;
    height: auto;
    max-height: 30px;
    width: 280px;
-   background-image: linear-gradient(to right, #4180F6, #F7C9F3);
-   color: #FFFFFF;
+   background-image: linear-gradient(to right, var(--LightBlueColor), var(--lightRoseColor));
+   color: var(--white);
    letter-spacing: 0;
    top: -50px;
    position: absolute;
