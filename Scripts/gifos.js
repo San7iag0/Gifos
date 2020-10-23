@@ -57,6 +57,9 @@ function light() {
 	
 		}
 }
+
+// remove all the loops for a single one to do all the changes 
+
 //change style to dark 
 function dark(){
 	document.body.style.backgroundColor = '#110038';

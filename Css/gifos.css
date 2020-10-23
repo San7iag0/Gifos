@@ -1,9 +1,18 @@
+/* check 
+- have to move all the duplicate code
+- make it mobile
+- check the number of white colors - and darkBlueColor 
+- 
+*/
+
 :root {
    --lightRoseColor: #F7C9F3;
    --roseColor: #EE3EFE;
    --LightBlueColor: #4180F6;
    --blueColor: #2E32FB;
    --white:  #FFFFFF;
+   --pinkSwan: #B4B4B4;
+   --whisper: #E6E6E6;
 /* CHECK THIS COLOR */
    --darkBlueColor: #110038;
 
@@ -92,14 +101,14 @@ body{
  
 .search{
    grid-area: search;
-   background-color: #E6E6E6;
+   background-color: var(--whisper);
    width: 1200px;
    height: 99px; 
 }
 
 .searchDark{
    grid-area: search;
-   background: #B4B4B4;
+   background: var(--pinkSwan);
    width: 1200px;
    height: 99px; 
 }
@@ -139,26 +148,26 @@ body{
 
    width: 1057px;
    height: 48px;
-   background-color: #E6E6E6;
+   background-color:  var(--whisper);
    background: var(--white);
    border: 1px solid #979797;
-   box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+   box-shadow: inset -2px -2px 0 0  var(--whisper), inset 2px 2px 0 0 #000000;
 }
 #searchGifbtn{
    content: url(./../Images/lupa.svg);
 
    font-family: ChakraPetch-Regular;
    font-size: 16px;
-   color: #B4B4B4;
+   color: var(--pinkSwan);
    letter-spacing: 0;
    line-height: 18px;
 
    width: 102px;
    height: 36px;
    margin: 0 0 0 10px;
-   background: #E6E6E6;
+   background: var(--whisper);
    border: 1px solid #808080;
-   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 var(--white);
+   box-shadow: inset -1px -1px 0 0 var(--pinkSwan), inset 1px 1px 0 0 var(--white);
    
 }
 
@@ -223,9 +232,9 @@ body{
    display: grid;
    width: 280px;
    height: 280px;
-   background:#E6E6E6; 
+   background: var(--whisper); 
    margin-bottom: 20px;   
-   box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 var(--white);
+   box-shadow: inset -2px -2px 0 0 var(--pinkSwan), inset 2px 2px 0 0 var(--white);
    position: relative;
 }
 .box:hover{
@@ -319,7 +328,7 @@ body{
    height: 102px;
    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
    z-index: 1;
-   background: #E6E6E6;
+   background: var(--whisper);
 }
 .dropdownContentDark{
    top: 96%;
@@ -330,7 +339,7 @@ body{
    height: 102px;
    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 var(--white);
    z-index: 1;
-   background: #B4B4B4;
+   background: var(--pinkSwan);
 }
  
 .show{
@@ -362,7 +371,7 @@ body{
    margin: 10px 10px 5px 10px;
    background: #CCCCCC;
    border: 1px solid #808080;
-   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 var(--white);
+   box-shadow: inset -1px -1px 0 0 var(--pinkSwan), inset 1px 1px 0 0 var(--white);
 }
 
 .sailorNbutton{
@@ -469,8 +478,8 @@ margin: 30px 0 30px 0;
    width:1200px;
    height:160px;
 
-   background: #E6E6E6;
-   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 var(--white);
+   background: var(--whisper);
+   box-shadow: inset -2px -2px 0 0 var(--pinkSwan), inset 2px 2px 0 0 var(--white);
 }
 #despMenu1Dark{
    align-content:center;
@@ -478,8 +487,8 @@ margin: 30px 0 30px 0;
    width:1200px;
    height:160px;
 
-   background: #E6E6E6;
-   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 var(--white);
+   background: var(--whisper);
+   box-shadow: inset -2px -2px 0 0 var(--pinkSwan), inset 2px 2px 0 0 var(--white);
 
 }
 .sugessText{
@@ -488,7 +497,7 @@ margin: 30px 0 30px 0;
    width:1055px;
    height:34px;
    border:1px solid #808080;
-   box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 var(--white);
+   box-shadow: inset -1px -1px 0 0 var(--pinkSwan), inset 1px 1px 0 0 var(--white);
    margin: 5px 0 5px 15px;
   
    background:#F0F0F0;
@@ -530,3 +539,4 @@ margin: 30px 0 30px 0;
    grid-template-rows: 1fr;
    position: relative;
 }
+/*  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
