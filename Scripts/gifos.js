@@ -107,11 +107,19 @@ function dark(){
 		}
 }
 
+// fetch('http://api.giphy.com/v1/gifs/random?api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW')
+// .then(res => {
+//     return res.json();
+// })
+// .then(data => {
+//     console.log(data) 
+// });
+
 
 window.onload = () => {
 	printTendencyGifs();
 
-	// createBoxesWithGifts(`https://api.giphy.com/v1/gifs/search?q= fiercedom honey &limit=2 &api_key=${apiKey}`, 'advice');
+	createBoxesWithGifts('http://api.giphy.com/v1/gifs/random?api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW', 'advice');
 	createBoxesWithGifts(`https://api.giphy.com/v1/gifs/search?q= sailor moon peace &limit=2&api_key=${apiKey}`, 'advice1');
 	// createBoxesWithGifts(`https://api.giphy.com/v1/gifs/search?q= hi5 &limit=2 &api_key=${apiKey}`, 'advice2');
 	// createBoxesWithGifts(`https://api.giphy.com/v1/gifs/search?q= unicorn &limit=2 &api_key=${apiKey}`, 'advice3');
