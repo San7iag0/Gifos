@@ -14,6 +14,7 @@
    --white:  #FFFFFF;
    --pinkSwan: #B4B4B4;
    --whisper: #E6E6E6;
+   --lightpurple: #E6DCE4;
 /* CHECK THIS COLOR */
    --darkBlueColor: #110038;
 
@@ -189,7 +190,7 @@ body{
    width:1200px;
    background:#FFFAFE;
    border: solid 1px #E6BBE2;
-   box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80887D;
+   box-shadow: inset -2px -2px 0 0 var(--lightpurple), inset 2px 2px 0 0 #80887D;
    
    padding:0 0 0 5px;
    margin: 30px 0 30px 0;
@@ -358,7 +359,7 @@ body{
    margin: 10px 10px 5px 10px;
    background: #FFF4FD;
    border: 1px solid #CCA6C9;
-   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 var(--white);
+   box-shadow: inset -1px -1px 0 0 var(--lightpurple), inset 1px 1px 0 0 var(--white);
 }
 .sailorDbuttonDark{
    font-family: ChakraPetch-Regular;
@@ -387,7 +388,7 @@ body{
    margin: 5px 10px 10px 10px;
    background: #FFF4FD;
    border: 1px solid #CCA6C9;
-   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 var(--white);
+   box-shadow: inset -1px -1px 0 0 var(--lightpurple), inset 1px 1px 0 0 var(--white);
    
 }
 .sailorNbuttonDark{
@@ -402,7 +403,7 @@ body{
    margin: 5px 10px 10px 10px;
    background: var(--blueColor);
    border: 1px solid rgba(51,53,143,0.20);
-   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 var(--white);
+   box-shadow: inset -1px -1px 0 0 var(--lightpurple), inset 1px 1px 0 0 var(--white);
 }
 
 .arrow {
@@ -466,7 +467,7 @@ height: 32px;
 width:1200px;
 background:#FFFAFE;
 border: solid 1px #E6BBE2;
-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80887D;
+box-shadow: inset -2px -2px 0 0 var(--lightpurple), inset 2px 2px 0 0 #80887D;
 
 padding:0 0 0 5px;
 margin: 30px 0 30px 0;
@@ -540,4 +541,3 @@ margin: 30px 0 30px 0;
    grid-template-rows: 1fr;
    position: relative;
 }
-/*  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */

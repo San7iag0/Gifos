@@ -112,16 +112,19 @@ function dark(){
 //     return res.json();
 // })
 // .then(data => {
-//     console.log(data) 
-// });
+//     console.log(dataList.data.images.original.webp);
+// })
+
+
+
 
 
 window.onload = () => {
 	printTendencyGifs();
 
-	createBoxesWithGifts('http://api.giphy.com/v1/gifs/random?api_key=InPSloMgOZvkGaz56pe7fI8SIsp0PDlW', 'advice');
+	createBoxesWithGifts(`http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`, 'advice');
 	createBoxesWithGifts(`https://api.giphy.com/v1/gifs/search?q= sailor moon peace &limit=2&api_key=${apiKey}`, 'advice1');
-	// createBoxesWithGifts(`https://api.giphy.com/v1/gifs/search?q= hi5 &limit=2 &api_key=${apiKey}`, 'advice2');
+	// createBoxesWithGifts(`https://api.giphy.com/v1/gifs/search?q= hi5 &limit=4 &api_key=${apiKey}`, 'advice2');
 	// createBoxesWithGifts(`https://api.giphy.com/v1/gifs/search?q= unicorn &limit=2 &api_key=${apiKey}`, 'advice3');
 }
 
@@ -158,6 +161,7 @@ function printTendencyGifs(){
 	});
 }
 
+// function to print gifts dynamically with promise
 function createBoxesWithGifts(url, contentId) {
 	fetch(url)
 		.then(response => { 
@@ -173,6 +177,7 @@ function createBoxesWithGifts(url, contentId) {
  		});
 }
 
+// 
 function printGiftBoxes(listGif, contentId) {
 
 	removeOldBoxes("dynamicGifts");
@@ -185,7 +190,6 @@ function printGiftBoxes(listGif, contentId) {
 		div.className = "box"; 
 		div.setAttribute("src",listGif[i].images.original.webp);
 		contenedor.appendChild(div);
-
 	}
 }
 
