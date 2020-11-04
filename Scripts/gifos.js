@@ -116,9 +116,6 @@ function dark(){
 // })
 
 
-
-
-
 window.onload = () => {
 	printTendencyGifs();
 
@@ -168,6 +165,7 @@ function createBoxesWithGifts(url, contentId) {
 			return response.json();
 		})
 		.then(dataList => {
+
 			printGiftBoxes(dataList.data, contentId);
 			
 		return data;
